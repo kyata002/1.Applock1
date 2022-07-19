@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/coordinatorSettings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toTopOf="@id/bottomView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:theme="@style/ToolbarTheme"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:titleEnabled="false"
+                app:collapsedTitleTextAppearance="@style/CollapsingToolbarTitle"
+                app:expandedTitleTextAppearance="@style/ExpandedToolbarTitle"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbarSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:titleCentered="true"
+                    app:titleTextColor="#000000"
+                    app:title="@string/bottom_settings"/>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="#eef1fa"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="16dp"
+            android:orientation="vertical">
+
+            <!--  -->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/clSettingsTheme"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:layout_marginStart="14dp"-->
+<!--                android:layout_marginEnd="14dp"-->
+<!--                android:background="@android:color/white">-->
+
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/flSettingsTheme"-->
+<!--                    android:layout_width="56dp"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:background="#fafafa"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageSettingsTheme"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        app:srcCompat="@drawable/ic_settings_theme"/>-->
+<!--                </FrameLayout>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:text="@string/title_settings_theme"-->
+<!--                    android:textColor="#263238"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/imageArrowTheme"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/flSettingsTheme"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"/>-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageArrowTheme"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingStart="0dp"-->
+<!--                    android:paddingEnd="10dp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:srcCompat="@drawable/ic_arrow_right"/>-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsChangeSuperPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsSettingsChangeSuperPassword"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsChangeSuperPassword"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_recover_pass"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_change_super_password"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageArrowChangeSuperPassword"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsSettingsChangeSuperPassword"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imageArrowChangeSuperPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsSettingsChangePassword"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsChangePassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_change_password" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_change_password"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageArrowChangePassword"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsSettingsChangePassword"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imageArrowChangePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsLockScreen"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsSettingsLockScreen"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsLockScreen"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_lock_screen"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_lock_screen"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/imageArrowLockScreen"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsSettingsLockScreen"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imageArrowLockScreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsIntruder"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsSettingsIntruder"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsIntruder"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_intruder"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_capture_the_intruder"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageArrowIntruder"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsSettingsIntruder"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imageArrowIntruder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsFingerprint"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsSettingsFingerprint"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsFingerprint"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_fingerprint"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_activate_fingerprint"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/switchSettingsFingerprint"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsSettingsFingerprint"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchSettingsFingerprint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/selector_switch_compat"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:thumb="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:track="@null"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- -->
+
+            <!-- -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsPreventApplicationUninstall"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting"
+                android:clickable="true"
+                android:focusable="true">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsPreventApplicationUninstall"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsPreventApplicationUninstall"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_prevent_uninstall" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_prevent_uninstall"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/switchPreventApplicationUninstall"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsPreventApplicationUninstall"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchPreventApplicationUninstall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/selector_switch_compat"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:thumb="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:track="@null" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsAskLockingNewApplication"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsAskLockingNewApplication"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsAskLockingNewApplication"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_locking_new_application" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_locking_new_application"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/switchAskLockingNewApplication"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsAskLockingNewApplication"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchAskLockingNewApplication"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/selector_switch_compat"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:thumb="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:track="@null" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsPrivacyPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsPrivacyPolicy"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsPrivacyPolicy"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_privacy_policy"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_privacy_policy"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageArrowPri"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsPrivacyPolicy"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <ImageView
+                    android:id="@+id/imageArrowPri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsRateApplication"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsRateApplication"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsRateApplication"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_settings_rate_application"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/title_settings_rate_application"
+                    android:textColor="#263238"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageArrowRate"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsRateApplication"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <ImageView
+                    android:id="@+id/imageArrowRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/background_item_configuration"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toStartOf="@id/imageMore"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="5dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="10dp"
+        android:textColor="#263238"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"/>
+
+    <ImageView
+        android:id="@+id/imageActive"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/background_configuration_active"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="12dp"
+        android:visibility="invisible"
+        app:tint="@color/colorWhite"
+        app:srcCompat="@drawable/ic_lock_active"/>
+
+    <com.MTG.library.customview.TagImageView
+        android:id="@+id/tagImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:layout_alignStart="@id/tvName"
+        android:layout_alignEnd="@id/tvName"
+        android:layout_marginTop="13dp"/>
+
+    <ImageView
+        android:id="@+id/imageMore"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackground"
+        android:paddingStart="20dp"
+        android:paddingEnd="25dp"
+        app:srcCompat="@drawable/ic_options"/>
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tagImageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="#e1e1e1"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewLine"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:padding="7dp"
+        android:textColor="#263238"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_time"
+        tools:text="4:20 AM - 7:30 PM"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTime"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:drawablePadding="15dp"
+        android:gravity="center_vertical"
+        android:padding="7dp"
+        android:textColor="#4464ed"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_date"
+        tools:text="Mon,Tue,Wed"/>
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PinLockView">
+        <attr name="pinLockReplay" format="reference|string"/>
+        <attr name="pinLockNext" format="reference|string"/>
+    </declare-styleable>
+
+    <declare-styleable name="PinLockViewV2">
+        <attr name="pinLockReplayV2" format="reference|string"/>
+        <attr name="pinLockNextV2" format="reference|string"/>
+        <attr name="pinLockModeV2" format="enum">
+            <enum name="full" value="1"/>
+            <enum name="mini" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PinLockMasterView">
+        <attr name="pinLockMasterReplay" format="reference|string"/>
+        <attr name="pinLockMasterNext" format="reference|string"/>
+    </declare-styleable>
+</resources>

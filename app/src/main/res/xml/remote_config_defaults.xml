@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>developer_name</key>
+        <value>HN Apps</value>
+    </entry>
+    <entry>
+        <key>developer_id</key>
+        <value>8082983400701478550</value>
+    </entry>
+</defaultsMap>

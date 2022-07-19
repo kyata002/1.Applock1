@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomToolbar">
+        <attr name="title" format="string|reference"/>
+        <attr name="hint_name" format="string|reference"/>
+        <attr name="hint_search_view" format="string|reference"/>
+        <attr name="tv_action" format="string|reference"/>
+        <attr name="tv_action_text_all_caps" format="boolean|reference"/>
+        <attr name="tv_action_extend" format="string|reference"/>
+        <attr name="show_back" format="boolean|reference"/>
+        <attr name="invisible_back" format="boolean|reference"/>
+        <attr name="show_title" format="boolean|reference"/>
+        <attr name="show_action" format="boolean|reference"/>
+        <attr name="show_action_extend" format="boolean|reference"/>
+        <attr name="show_tv_action" format="boolean|reference"/>
+        <attr name="show_tv_action_extend" format="boolean|reference"/>
+        <attr name="show_edit_search_view" format="boolean|reference"/>
+        <attr name="show_edit_name" format="boolean|reference"/>
+        <attr name="ic_back" format="reference"/>
+        <attr name="ic_action" format="reference"/>
+        <attr name="ic_action_extend" format="reference"/>
+        <attr name="ic_up" format="reference"/>
+        <attr name="ic_down" format="reference"/>
+        <attr name="text_color_title" format="reference"/>
+        <attr name="text_color_action" format="reference"/>
+        <attr name="background_color" format="reference"/>
+    </declare-styleable>
+</resources>

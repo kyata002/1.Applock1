@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:elevation="0dp"
+    android:focusable="true"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
+
+    <com.MTG.library.customview.SquareLayout
+        android:id="@+id/slRootImageVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageDetailImageVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/imageSelectedImageVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:visibility="gone"/>
+    </com.MTG.library.customview.SquareLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PFCheckBox">
+        <item name="android:checkboxStyle">@style/PFLockScreenCodeStyle</item>
+        <item name="checkboxStyle">@style/PFLockScreenCodeStyle</item>
+    </style>
+
+    <style name="PFLockScreenCodeStyle">
+        <item name="android:button">@drawable/selector_checkbox_default</item>
+    </style>
+
+    <style name="tvPinLock">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/selector_pin_lock_default</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="imagePinLockDefault">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/selector_pin_lock_default</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="imagePinLock">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

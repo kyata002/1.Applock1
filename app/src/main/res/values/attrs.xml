@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomView">
+        <attr name="modeView" format="enum">
+            <enum name="home" value="0"/>
+            <enum name="delete_unlock" value="1"/>
+            <enum name="delete_unlock_detail" value="2"/>
+            <enum name="delete_save_share" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="RatingBar">
+        <!-- The number of stars (or rating items) to show. -->
+        <attr name="numStars" format="integer"/>
+        <!-- The rating to set by default. -->
+        <attr name="rating" format="float"/>
+        <!-- The step size of the rating. -->
+        <attr name="stepSize" format="float"/>
+        <!-- Whether this rating bar is an indicator (and non-changeable by the user). -->
+        <attr name="isIndicator" format="boolean"/>
+        <!-- The spacing between items. -->
+        <attr name="spacing" format="dimension"/>
+        <!-- What kind of mode for automatic adaptation. -->
+        <attr name="automatic" format="enum">
+            <!-- Fully automatic  -->
+            <enum name="fully" value="0"/>
+            <!-- Semi automatic  -->
+            <enum name="semi" value="1"/>
+            <!-- Manual -->
+            <enum name="manual" value="2"/>
+        </attr>
+        <!-- The default background image. -->
+        <attr name="progressBar" format="reference"/>
+        <!-- The progressed background image. -->
+        <attr name="progressedBar" format="reference"/>
+    </declare-styleable>
+</resources>

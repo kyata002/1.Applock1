@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eef1fa"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/vImages"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/selector_background_private_view"
+            app:layout_constraintDimensionRatio="296:235"
+            app:layout_constraintEnd_toStartOf="@id/vVideos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.42"/>
+
+        <ImageView
+            android:id="@+id/ivImages"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@id/vImages"
+            app:layout_constraintEnd_toEndOf="@id/vImages"
+            app:layout_constraintStart_toStartOf="@id/vImages"
+            app:layout_constraintTop_toTopOf="@id/vImages"
+            app:layout_constraintVertical_bias="0.26"
+            app:srcCompat="@drawable/ic_image" />
+
+        <TextView
+            android:id="@+id/tvImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="#263238"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/ivImages"
+            app:layout_constraintStart_toStartOf="@id/ivImages"
+            app:layout_constraintTop_toBottomOf="@id/ivImages"/>
+
+        <View
+            android:id="@+id/vVideos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/selector_background_private_view"
+            app:layout_constraintDimensionRatio="296:235"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vImages"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.42" />
+
+        <ImageView
+            android:id="@+id/ivVideos"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@id/vVideos"
+            app:layout_constraintEnd_toEndOf="@id/vVideos"
+            app:layout_constraintStart_toStartOf="@id/vVideos"
+            app:layout_constraintTop_toTopOf="@id/vVideos"
+            app:layout_constraintVertical_bias="0.26"
+            app:srcCompat="@drawable/ic_video"/>
+
+        <TextView
+            android:id="@+id/tvVideos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="#263238"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@id/ivVideos"
+            app:layout_constraintStart_toStartOf="@id/ivVideos"
+            app:layout_constraintTop_toBottomOf="@id/ivVideos"/>
+
+        <View
+            android:id="@+id/vAudios"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/selector_background_private_view"
+            app:layout_constraintDimensionRatio="296:235"
+            app:layout_constraintEnd_toStartOf="@id/vFiles"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vVideos"
+            app:layout_constraintWidth_percent="0.42"/>
+
+        <ImageView
+            android:id="@+id/ivAudios"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@id/vAudios"
+            app:layout_constraintEnd_toEndOf="@id/vAudios"
+            app:layout_constraintStart_toStartOf="@id/vAudios"
+            app:layout_constraintTop_toTopOf="@id/vAudios"
+            app:layout_constraintVertical_bias="0.26"
+            app:srcCompat="@drawable/ic_audio"/>
+
+        <TextView
+            android:id="@+id/tvAudios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="#263238"
+            android:gravity="center"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/ivAudios"
+            app:layout_constraintStart_toStartOf="@id/ivAudios"
+            app:layout_constraintTop_toBottomOf="@id/ivAudios"/>
+
+        <View
+            android:id="@+id/vFiles"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/selector_background_private_view"
+            app:layout_constraintDimensionRatio="296:235"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vAudios"
+            app:layout_constraintTop_toBottomOf="@id/vVideos"
+            app:layout_constraintWidth_percent="0.42"/>
+
+        <ImageView
+            android:id="@+id/ivFiles"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="@id/vFiles"
+            app:layout_constraintEnd_toEndOf="@id/vFiles"
+            app:layout_constraintStart_toStartOf="@id/vFiles"
+            app:layout_constraintTop_toTopOf="@id/vFiles"
+            app:layout_constraintVertical_bias="0.26"
+            app:srcCompat="@drawable/ic_file"/>
+
+        <TextView
+            android:id="@+id/tvFiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="#263238"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/ivFiles"
+            app:layout_constraintStart_toStartOf="@id/ivFiles"
+            app:layout_constraintTop_toBottomOf="@id/ivFiles"/>
+
+        <FrameLayout
+            android:id="@+id/flAds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vFiles"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

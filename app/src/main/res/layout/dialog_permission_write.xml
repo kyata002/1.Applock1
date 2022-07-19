@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_dialog_permission">
+
+    <ImageView
+        android:id="@+id/imageLogoPermissionWrite"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_image_permission"/>
+
+    <TextView
+        android:id="@+id/tvTitlePermissionWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="@string/text_allow_write_access"
+        android:textColor="#263238"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imageLogoPermissionWrite"/>
+
+    <TextView
+        android:id="@+id/tvMessagePermissionWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:text="@string/text_allows_applock_access_to_photos"
+        android:textColor="#546e7a"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitlePermissionWrite"/>
+
+    <TextView
+        android:id="@+id/btnDenyPermissionWrite"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/selector_background_btn_cancel"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/text_deny"
+        android:textAllCaps="false"
+        android:textColor="#4464ed"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAllowPermissionWrite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMessagePermissionWrite"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <TextView
+        android:id="@+id/btnAllowPermissionWrite"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/selector_background_dialog_detail"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/text_allow"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnDenyPermissionWrite"
+        app:layout_constraintTop_toBottomOf="@id/tvMessagePermissionWrite"
+        app:layout_constraintWidth_percent="0.4"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

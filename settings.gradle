@@ -1,0 +1,13 @@
+include ':Samsung_Fingerprint_Sdk-v1.0.0'
+include ':Samsung_Fingerprint_Pass-v1.2.6'
+include ':MeiZu_Fingerprint'
+include ':keyboard'
+include ':hiddencamera'
+include ':pinlock'
+include ':patternlockview'
+include ':toasty'
+include ':ucrop'
+include ':library'
+include ':fingerprint'
+include ':app'
+rootProject.name = "Applock"

@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 32
+
+    // This is important, it will run lint checks but won't abort build
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 32
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+//buildscript {
+//    repositories {
+//        jcenter()
+//        mavenCentral()
+//        google()
+//    }
+//}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$appcompat"
+}

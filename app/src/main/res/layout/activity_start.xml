@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/background_theme_default"/>
+
+    <ImageView
+        android:id="@+id/imageCreate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
+        app:layout_constraintEnd_toStartOf="@id/imageLine1"
+        app:srcCompat="@drawable/selector_image_create_01"/>
+
+    <ImageView
+        android:id="@+id/imageLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
+        app:layout_constraintEnd_toStartOf="@id/imageCreate2"
+        app:layout_constraintTop_toTopOf="@id/imageCreate2"
+        app:srcCompat="@drawable/line"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <ImageView
+        android:id="@+id/imageCreate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:srcCompat="@drawable/selector_image_create_02"/>
+
+    <ImageView
+        android:id="@+id/imageLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
+        app:layout_constraintStart_toEndOf="@id/imageCreate2"
+        app:layout_constraintTop_toTopOf="@id/imageCreate2"
+        app:srcCompat="@drawable/line"/>
+
+    <ImageView
+        android:id="@+id/imageCreate3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
+        app:layout_constraintStart_toEndOf="@id/imageLine2"
+        app:srcCompat="@drawable/selector_image_create_03"/>
+
+    <ImageView
+        android:id="@+id/imagePin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageCreate2"
+        app:srcCompat="@drawable/ic_change_to_pin"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="@string/pattern_draw_your_unlock_pattern"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@id/imageCreate2"/>
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="pinLock,patternLockView"/>
+
+    <ImageView
+        android:id="@+id/imagePattern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageCreate2"
+        app:srcCompat="@drawable/ic_change_to_pattern"/>
+
+    <com.MTG.patternlockview.PatternLockView
+        android:id="@+id/patternLockView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:aspectRatio="square"
+        app:dotNormalSize="16dp"
+        app:dotSelectedSize="24dp"
+        app:layout_constraintBottom_toTopOf="@id/tvReset"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:pathWidth="6dp"/>
+
+    <com.MTG.pinlock.PinLockView
+        android:id="@+id/pinLock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/tvNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:pinLockReplay="@string/text_reset"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tvReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/selector_background_completed"
+        android:text="@string/text_reset"
+        android:textColor="#4464ed"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tvNext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/selector_background_completed"
+        android:text="@string/text_next"
+        android:textColor="#4464ed"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"/>
+
+
+
+    <!-- cài đặt mật khẩu khôi phục -->
+
+    <TextView
+        android:id="@+id/tvTitlePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="@string/title_settings_change_super_password"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/editPassword"
+        app:layout_constraintTop_toBottomOf="@id/imageCreate2"/>
+
+
+
+    <ImageView
+        android:id="@+id/imageHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editPassword"
+        app:srcCompat="@drawable/ic_help"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:endIconMode="password_toggle"
+        android:visibility="gone"
+        android:theme="@style/TextInputThemeDark"
+        android:hint="@string/text_super_password"
+        app:layout_constraintBottom_toTopOf="@id/btnCompleted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageCreate2">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="32"
+            android:textSize="20sp"
+            android:maxLines="1"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editConfirmPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
+        android:theme="@style/TextInputThemeDark"
+        app:endIconMode="password_toggle"
+        android:visibility="gone"
+        android:hint="@string/text_confirm_super_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editPassword">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="32"
+            android:textSize="20sp"
+            android:maxLines="1"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/tvMessagePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:lineSpacingExtra="4dp"
+        android:text="@string/msg_create_super_password"
+        android:textColor="#eae3fd"
+        android:textSize="13sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/editConfirmPassword"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCompleted"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/selector_background_completed"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/text_completed"
+        android:textAllCaps="true"
+        android:textColor="#4464ed"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imageBackgroundSplash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/background_theme_default"/>
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            android:padding="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineSplash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_note_icon"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSplash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imageLogo"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Robust Secure Trusted"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimaryLight"
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toBottomOf="@id/appTitle"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAccept"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/selector_background_completed"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/dialog_action_privacy_policy_accept"
+            android:textAllCaps="true"
+            android:textColor="#4464ed"
+            app:layout_constraintBottom_toTopOf="@id/tvPolicy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.7"/>
+
+        <TextView
+            android:id="@+id/tvPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="25dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

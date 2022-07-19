@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tvDay1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/selector_background_text_view_item_every_time"
+            android:gravity="center"
+            android:text="Mon"
+            android:textColor="@color/selector_color_every_time"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvDay2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/selector_background_text_view_item_every_time"
+            android:gravity="center"
+            android:text="Tue"
+            android:textColor="@color/selector_color_every_time"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tvDay1"
+            app:layout_constraintTop_toTopOf="@id/tvDay1"/>
+
+        <TextView
+            android:id="@+id/tvDay3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/selector_background_text_view_item_every_time"
+            android:gravity="center"
+            android:text="Wed"
+            android:textColor="@color/selector_color_every_time"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tvDay2"
+            app:layout_constraintTop_toTopOf="@id/tvDay1"/>
+
+        <TextView
+            android:id="@+id/tvDay4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/selector_background_text_view_item_every_time"
+            android:gravity="center"
+            android:text="Thu"
+            android:textColor="@color/selector_color_every_time"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tvDay3"
+            app:layout_constraintTop_toTopOf="@id/tvDay1"/>
+
+        <TextView
+            android:id="@+id/tvDay5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/selector_background_text_view_item_every_time"
+            android:gravity="center"
+            android:text="Fri"
+            android:textColor="@color/selector_color_every_time"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tvDay4"
+            app:layout_constraintTop_toTopOf="@id/tvDay1"/>
+
+        <TextView
+            android:id="@+id/tvDay6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/selector_background_text_view_item_every_time"
+            android:gravity="center"
+            android:text="Sat"
+            android:textColor="@color/selector_color_every_time"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tvDay5"
+            app:layout_constraintTop_toTopOf="@id/tvDay1"/>
+
+        <TextView
+            android:id="@+id/tvDay7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/selector_background_text_view_item_every_time"
+            android:gravity="center"
+            android:text="Sun"
+            android:textColor="@color/selector_color_every_time"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvDay1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tvDay6"
+            app:layout_constraintTop_toTopOf="@id/tvDay1"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</HorizontalScrollView>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.MTG.AppLock">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <application
+        android:name="com.MTG.AppLock.AppLockerApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:manageSpaceActivity="com.MTG.AppLock.ui.activity.splash.SplashActivity"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="false"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:supportsRtl,android:allowBackup"
+        tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity">
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.configuration.ConfigurationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.first.FirstActivity"
+            android:autoRemoveFromRecents="true"
+            android:clearTaskOnLaunch="true"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.splash.SplashActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:excludeFromRecents="true"
+            android:finishOnCloseSystemDialogs="true"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.first.FirstAllActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.lockscreen.LockScreenActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.password.changepassword.ChangePasswordActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.MainActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.password.newpattern.CreateNewPatternActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.theme.UCropActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.policy.PolicyActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.password.overlay.activity.OverlayValidationActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.password.overlay.activity.settings.OverlayValidationForSettingsActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.configuration.edit.EditConfigurationActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.theme.ThemeActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.configuration.detail.DetailConfigurationActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.apply.ApplyThemeActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.selected.SelectedActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.theme.selected.SelectedImageActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.personal.personallist.PersonalListActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.move.MoveActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.detail.DetailListActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.detail.DetailActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.intruders.IntrudersPhotosActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.intruders.detail.IntrudersPhotosDetailActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.superpassword.validate.SuperPasswordValidateActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.superpassword.SuperPasswordActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.email.EmailActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.MTG.AppLock.ui.activity.main.settings.email.emailvalidate.EmailValidateActivity"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.MTG.AppLock.service.AppLockerService" />
+
+        <receiver
+            android:name="com.MTG.AppLock.service.receiver.BootCompleteReceiver"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.MTG.AppLock.ui.activity.main.settings.AdminReceiver"
+            android:exported="false"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.MTG.AppLock.service.receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <meta-data
+            tools:replace="android:value"
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/mobile_ad_id" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

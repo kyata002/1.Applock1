@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="84dp"
+    android:background="@drawable/background_bottom_view">
+
+    <!-- app lock -->
+    <LinearLayout
+        android:id="@+id/llAppLock"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageAppLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/selector_ic_bottom_app_lock"/>
+
+        <TextView
+            android:id="@+id/tvAppLock"
+            style="@style/textBottomStyle"
+            android:text="@string/bottom_app_lock"/>
+    </LinearLayout>
+
+    <!-- group lock -->
+    <LinearLayout
+        android:id="@+id/llGroupLock"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageGroupLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_bottom_group_lock"/>
+
+        <TextView
+            android:id="@+id/tvGroupLock"
+            style="@style/textBottomStyle"
+            android:text="@string/bottom_group_lock"/>
+    </LinearLayout>
+
+    <!-- settings -->
+    <LinearLayout
+        android:id="@+id/llSettings"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/selector_ic_bottom_settings"/>
+
+        <TextView
+            android:id="@+id/tvSettings"
+            style="@style/textBottomStyle"
+            android:text="@string/bottom_settings"/>
+    </LinearLayout>
+
+    <!-- delete -->
+    <LinearLayout
+        android:id="@+id/llDelete"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/selector_ic_btn_delete"/>
+
+        <TextView
+            android:id="@+id/tvDelete"
+            style="@style/textBottomStyle"
+            android:text="@string/menu_delete"/>
+    </LinearLayout>
+
+    <!-- unlock -->
+    <LinearLayout
+        android:id="@+id/llUnLock"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageUnlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/selector_ic_btn_unlock"/>
+
+        <TextView
+            android:id="@+id/tvUnlock"
+            style="@style/textBottomStyle"
+            android:text="@string/bottom_unlock"/>
+    </LinearLayout>
+
+    <!-- detail -->
+    <LinearLayout
+        android:id="@+id/llDetail"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/selector_ic_btn_detail"/>
+
+        <TextView
+            android:id="@+id/tvDetail"
+            style="@style/textBottomStyle"
+            android:text="@string/bottom_detail"/>
+    </LinearLayout>
+
+    <!-- save -->
+    <LinearLayout
+        android:id="@+id/llSave"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/selector_ic_bottom_save"/>
+
+        <TextView
+            android:id="@+id/tvSave"
+            style="@style/textBottomStyle"
+            android:text="@string/bottom_save"/>
+    </LinearLayout>
+
+    <!-- share -->
+    <LinearLayout
+        android:id="@+id/llShare"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/selector_ic_bottom_share"/>
+
+        <TextView
+            android:id="@+id/tvShare"
+            style="@style/textBottomStyle"
+            android:text="@string/bottom_share"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="code_fp_margin">5dp</dimen>
+    <dimen name="height_pin_row">50dp</dimen>
+    <dimen name="height_pin_row_v2">60dp</dimen>
+</resources>

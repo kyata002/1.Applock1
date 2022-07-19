@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('Samsung_Fingerprint_Pass-v1.2.6.jar'))

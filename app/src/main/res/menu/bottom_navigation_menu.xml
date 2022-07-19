@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/baseline_home_24"
+        android:id="@+id/bottom_app_lock"
+        android:enabled="true"
+        android:title="@string/bottom_app_lock" />
+    <item
+        android:icon="@drawable/baseline_grid_view_24"
+        android:id="@+id/bottom_group_lock"
+        android:enabled="true"
+        android:title="@string/bottom_group_lock" />
+    <item
+        android:icon="@drawable/baseline_settings_suggest_24"
+        android:id="@+id/bottom_settings"
+        android:enabled="true"
+        android:title="@string/bottom_settings" />
+</menu>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/MeiZu_Fingerprint" />
+            <option value="$PROJECT_DIR$/Samsung_Fingerprint_Pass-v1.2.6" />
+            <option value="$PROJECT_DIR$/Samsung_Fingerprint_Sdk-v1.0.0" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/fingerprint" />
+            <option value="$PROJECT_DIR$/hiddencamera" />
+            <option value="$PROJECT_DIR$/keyboard" />
+            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/patternlockview" />
+            <option value="$PROJECT_DIR$/pinlock" />
+            <option value="$PROJECT_DIR$/toasty" />
+            <option value="$PROJECT_DIR$/ucrop" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

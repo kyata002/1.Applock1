@@ -1,0 +1,316 @@
+<resources>
+    <string name="app_name" translatable="false">App Lock</string>
+    <!-- AD unit ids-->
+    <string name="mobile_ad_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="full_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="native_id" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
+
+    <string name="policy_url" translatable="false">YOUR_PRIVACY_URL_HERE</string>
+
+    <string name="ad_attribution" translatable="false">Ad</string>
+
+    <string name="tab_a_z" translatable="false">A - Z</string>
+
+    <string name="notification_protecting_title">Protecting your apps</string>
+
+    <string name="notification_protecting_description">Lock your apps to protect your privacy.</string>
+
+    <string name="title_theme">Theme</string>
+
+    <!-- Settings -->
+
+    <string name="setting_fingerprint_title">Enable fingerprint</string>
+
+    <string name="setting_fingerprint_description">Launch app with your fingerprint.</string>
+    <string name="setting_fingerprint_not_supported_title">Fingerprint is not supported</string>
+
+    <string name="setting_fingerprint_not_supported_description">Your device doesn\'t have a sensor</string>
+    <string name="setting_fingerprint_not_registered_title">Please register your fingerprint!</string>
+
+    <string name="setting_fingerprint_not_registered_description">Go to security settings</string>
+
+    <!-- Permissions activity -->
+
+    <string name="pattern_draw_your_unlock_pattern">Draw your unlock pattern</string>
+    <string name="pattern_draw_your_unlock_current_pattern">Draw your current unlock pattern</string>
+    <string name="pattern_confirm_your_pattern">Confirm your pattern</string>
+    <string name="redraw_pattern_title">Draw pattern again to confirm</string>
+    <string name="pattern_connect_at_least_4_dots">Connect at least 4 dots</string>
+    <string name="create_pattern_completed">Completed!</string>
+
+    <string name="recreate_pattern_error">Patterns do not match. Please Redraw!</string>
+
+    <string name="create_pattern_successful">Successfully created</string>
+    <string name="overlay_prompt_pattern_title">Draw pattern to open app</string>
+    <string name="overlay_prompt_pattern_title_wrong">Wrong pattern. Please draw again.</string>
+
+    <string name="overlay_prompt_fingerprint_title_wrong">Fingerprint not match</string>
+
+    <string name="overlay_prompt_fingerprint_title_error">Fingerprint error! Please try again.</string>
+
+    <string name="dialog_action_privacy_policy_accept">Accept</string>
+
+    <!-- Browser Activity texts -->
+    <string name="title_gallery">Gallery</string>
+    <string name="title_audio_library">Audio library</string>
+    <string name="title_file_library">File library</string>
+
+    <!-- Call Blocker Activity texts -->
+
+    <string name="title_photo_empty_page">No private image</string>
+    <string name="title_video_empty_page">No private video</string>
+    <string name="title_audio_empty_page">No private audio</string>
+    <string name="title_file_empty_page">No private file</string>
+
+    <!-- Intruders Photo Activity -->
+    <string name="title_intruders_photos">Capture the intruder</string>
+    <string name="msg_empty_page_intruders_title">No intruder\'s photo</string>
+
+    <!-- vault   -->
+    <string name="tabs_vault_images">Images</string>
+    <string name="tabs_vault_videos">Videos</string>
+    <string name="tabs_vault_audios">Audios</string>
+    <string name="tabs_vault_files">Files</string>
+
+    <!-- manage space   -->
+
+    <!-- main   -->
+
+    <string name="tab_locked">Locked</string>
+    <string name="tab_private">Private</string>
+
+    <!-- menu more -->
+    <string name="menu_detail">Detail</string>
+    <string name="menu_open">Open</string>
+    <string name="menu_move_out">Move out</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_deactivate">Deactivate</string>
+    <string name="menu_activate">Activate</string>
+    <string name="menu_save_to_gallery">Save to gallery</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_rename">Rename</string>
+    <string name="menu_preview">Preview</string>
+    <string name="menu_customize_time">Customize lock time</string>
+    <string name="txt_ok">OK</string>
+    <string name="txt_yes">Yes</string>
+    <string name="txt_no">No</string>
+    <string name="txt_check">Check</string>
+    <string name="txt_skip">Skip</string>
+    <string name="msg_please_choose_at_least_one">Please choose at least one</string>
+    <string name="tab_pattern">Pattern</string>
+    <string name="tab_keypad">Keypad</string>
+    <string name="tab_wallpaper">Wallpaper</string>
+
+    <string name="txt_apply">Apply</string>
+    <string name="title_set_lock_wallpaper">Set lock wallpaper</string>
+    <string name="title_confirm">Confirm</string>
+    <string name="msg_cannot_retrieve_cropped_image">Cannot retrieve cropped image</string>
+    <string name="msg_change_lock_wallpaper_succeed">Changed lock wallpaper successfully</string>
+    <string name="msg_theme_has_been_changed">Theme has been changed</string>
+
+    <string name="msg_images_unlock">Are you sure you want to unlock all selected pictures to the storage?</string>
+    <string name="msg_videos_unlock">Are you sure you want to unlock all selected videos to the storage?</string>
+    <string name="msg_audios_unlock">Are you sure you want to unlock all selected audios to the storage?</string>
+    <string name="msg_files_unlock">Are you sure you want to unlock all selected files to the storage?</string>
+
+    <string name="msg_images_unlock1">Are you sure you want to unlock selected pictures to the storage?</string>
+    <string name="msg_videos_unlock1">Are you sure you want to unlock selected videos to the storage?</string>
+    <string name="msg_audios_unlock1">Are you sure you want to unlock selected audios to the storage?</string>
+    <string name="msg_files_unlock1">Are you sure you want to unlock selected files to the storage?</string>
+
+    <string name="msg_images_delete">The photo will be completely deleted and cannot be recovered.</string>
+    <string name="msg_videos_delete">The video will be completely deleted and cannot be recovered.</string>
+    <string name="msg_audios_delete">The audio will be completely deleted and cannot be recovered.</string>
+    <string name="msg_files_delete">The file will be completely deleted and cannot be recovered.</string>
+    <string name="msg_delete_failed">File deletion failed.</string>
+    <string name="msg_denied_permission">If you reject the permission, you cannot use this service\n\nPlease turn on permissions at [Setting] > [Permission]</string>
+    <string name="msg_pin_lock_confirm">Please re-enter your password</string>
+    <string name="msg_pin_lock_current_password">Please enter your current password</string>
+    <string name="msg_pin_lock_error">Confirmation password is incorrect</string>
+    <string name="msg_pin_lock_error_login">Passwords do not match, please try again</string>
+    <string name="msg_pin_lock_set_your_pin_code">Set your PIN code</string>
+    <string name="msg_pin_lock_enter_numbers">Enter 4–6 numbers</string>
+    <string name="msg_pin_lock_confirm_your_pin">Confirm your PIN</string>
+    <string name="msg_pin_lock_wrong_pin_code">Wrong PIN code</string>
+
+    <string name="msg_password_has_been_changed">Password has been changed</string>
+
+    <string name="text_file_size">Size:</string>
+    <string name="text_resolution">Resolution:</string>
+    <string name="text_last_modified">Last modified:</string>
+    <string name="text_duration">Duration:</string>
+    <string name="text_name">Name:</string>
+    <string name="title_move_in">Move In</string>
+    <string name="title_move_out">Move Out</string>
+    <string name="msg_move_in">Are you sure you want to move this item to the archive?</string>
+    <string name="msg_move_out">Are you sure you want to move this item out of the archive?</string>
+    <string name="title_operation_successful">Operation succeeded</string>
+    <string name="text_save">Save</string>
+    <string name="text_save_and_active">Save and active</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_go_to_setting">Go to Setting</string>
+    <string name="text_deny">Deny</string>
+    <string name="text_allow">Allow</string>
+    <string name="text_no_cancel">No, Cancel</string>
+    <string name="text_yes_do_it">Yes, Do it</string>
+    <string name="text_ok_lock_it">OK, Lock it</string>
+    <string name="text_open_app">Open App</string>
+    <string name="msg_intruder_record">Take a picture of the intruder if a wrong password is entered multiple times</string>
+    <string name="msg_delete_image_intruder">Are you sure you want to delete the photos?</string>
+    <string name="msg_delete_group_lock">Are you sure you want to delete this group?</string>
+    <string name="msg_picture_has_been_saved_to_gallery">Picture has been saved to the gallery!</string>
+    <string name="title_intruder_photo_dialog">Intruder detection</string>
+    <string name="msg_intruder_photo_dialog">Somebody is trying to intrude into your phone</string>
+
+    <string name="title_settings_activate_fingerprint">Activate fingerprint</string>
+    <string name="title_settings_theme">Theme</string>
+    <string name="title_settings_change_password">Change password</string>
+    <string name="title_settings_capture_the_intruder">Capture the intruder</string>
+    <string name="title_settings_lock_screen">Lock screen</string>
+    <string name="title_settings_prevent_uninstall">Prevent uninstalling</string>
+    <string name="title_settings_locking_new_application">Ask for locking new application</string>
+    <string name="title_settings_privacy_policy">Privacy Policy</string>
+    <string name="title_settings_rate_application">Rate application</string>
+    <string name="title_forgot_password">Forgot password</string>
+    <string name="hint_enter_name_group_lock">Enter name group lock</string>
+    <string name="text_invalid_email_address">Invalid email address</string>
+    <string name="text_vibrate">Vibrate</string>
+    <string name="text_show_path_line">Show path line</string>
+    <string name="splash_policy">By proceeding, you agree to the</string>
+    <!--    -->
+
+    <string name="text_warning">Warning</string>
+    <string name="msg_failed_more_password">Too many incorrect attempts. Please try again later.</string>
+    <string name="msg_failed_more_fingerprint">Try your fingerprint again in 30 seconds.</string>
+    <string name="msg_forgot_password">Forgot password?</string>
+    <string name="msg_fingerprint_no_match">Fingerprints do not match</string>
+
+    <string name="msg_prevent_application_uninstall">Hackers will be able to uninstall the application</string>
+
+    <string name="msg_activate_group_lock">Do you want to activate?</string>
+    <string name="msg_deactivate_group_lock">Do you want to deactivate?</string>
+    <string name="msg_successfully_activated">Activated successfully</string>
+    <string name="msg_successfully_deactivated">Deactivated successfully</string>
+
+    <string name="hint_search">Search</string>
+    <string name="msg_group_lock_name_cannot_be_empty">Group lock name cannot be empty</string>
+    <string name="msg_create_group_lock_successfully">Created a new group lock successfully</string>
+    <string name="msg_create_group_lock_failed">New group lock creating failed</string>
+    <string name="msg_update_group_lock_successfully">Updated group lock successfully</string>
+    <string name="msg_update_group_lock_failed">Group lock updating failed</string>
+    <string name="msg_rename_group_lock_successfully">Renamed group lock successfully</string>
+    <string name="msg_rename_group_lock_failed">Group lock renaming failed</string>
+
+    <string name="msg_phone_does_not_support_fingerprints">Your phone does not support fingerprints</string>
+    <string name="msg_add_fingerprint">To use fingerprint lock, please open phone Settings, add fingerprint first</string>
+    <string name="msg_apply_prevent_application_uninstall">Prevent uninstalling of force-stop application</string>
+
+    <string name="text_next">Next</string>
+    <string name="text_no_result">No result</string>
+
+    <string name="title_warning_close_app">Do you want to leave the app ?</string>
+    <string name="msg_warning_remove_admin">You have just restarted the device. The temporary function is not available immediately, please try again in a few minutes!</string>
+    <string name="msg_warning_fingerprint_lock">Too many attempts. Fingerprint sensor is off. Please go to settings to change</string>
+    <string name="msg_photo_is_already_in_the_gallery">This photo is already in the gallery</string>
+
+    <string name="msg_unlock_settings">Unlocking Setting will limit the security function. We recommend locking it.</string>
+    <string name="text_unlock">Unlock</string>
+    <string name="text_lock">Lock</string>
+    <string name="check_network_connection">Please check your Internet connection !!!</string>
+    <string name="title_download">Download</string>
+    <string name="msg_change_lock_wallpaper_failed">Lock\'s wallpaper changing failed</string>
+    <string name="msg_change_theme_failed">Theme changing failed</string>
+    <string name="msg_would_you_like_to_download_this_theme">Would you like to download this theme ?</string>
+    <string name="msg_would_you_like_to_apply_this_theme">Would you like to apply this theme ?</string>
+    <string name="msg_would_you_like_to_apply_this_background">Would you like to apply this background ?</string>
+    <string name="msg_would_you_like_to_unlock_all_app">Would you like to unlock all apps?</string>
+    <string name="msg_do_you_want_to_save_the_group_lock">Do you want to save the group lock?</string>
+    <string name="msg_do_you_want_to_save_and_active_the_group_lock">Do you want to save and active the group lock?</string>
+    <string name="msg_cannot_unlock_app">You cannot unlock this app because it belongs to an already active lock group!</string>
+    <string name="msg_cannot_unlock_app_all">You cannot unlock all app because it belongs to an already active lock group!</string>
+    <string name="text_downloading">Downloading...</string>
+
+    <string name="title_success">Successful</string>
+    <string name="title_fingerprint">Fingerprint</string>
+
+    <string name="msg_downloaded_successfully_and_create_new_password">Downloaded successfully, please setup a new password</string>
+
+    <string name="msg_not_enough_memory">Insufficient storage space on the device. Free up for more space.</string>
+    <string name="msg_file_not_found">File not found</string>
+    <string name="msg_file_has_problem">The file has a problem, try again!</string>
+
+    <string name="msg_not_enough_memory_intruder">Insufficient storage space on the device to take pictures. Free up for more space.</string>
+    <string name="msg_not_enough_memory_download">Insufficient storage space on the device to download. Free up for more space.</string>
+
+    <string name="bottom_app_lock">App Lock</string>
+    <string name="bottom_group_lock">Group Lock</string>
+    <string name="bottom_settings">Settings</string>
+    <string name="bottom_unlock">Unlock</string>
+    <string name="bottom_detail">Detail</string>
+    <string name="bottom_save">Save</string>
+    <string name="bottom_share">Share</string>
+
+    <string name="text_sensitive_applications">Sensitive applications</string>
+    <string name="text_general">General</string>
+
+    <string name="text_choose_from_gallery">Choose from gallery</string>
+    <string name="text_completed">Completed</string>
+    <string name="text_click_here_to_unlock_all_apps">Click here to unlock all apps</string>
+    <string name="text_click_here_to_lock">Click here to lock</string>
+
+    <string name="text_photo">photo</string>
+    <string name="text_photos">photos</string>
+    <string name="text_video">video</string>
+    <string name="text_videos">videos</string>
+    <string name="text_audio">audio</string>
+    <string name="text_audios">audios</string>
+    <string name="text_file">file</string>
+    <string name="text_files">files</string>
+    <string name="text_reset">Reset</string>
+
+    <string name="text_no_private_group">No group lock</string>
+    <string name="text_press_to_add_group_lock">Press + to add group lock</string>
+    <string name="msg_requires_at_least_one_application">Requires at least one application</string>
+
+    <string name="text_click_here_to_add">Click here to add</string>
+    <string name="text_app_to_the_group">app to the group</string>
+    <string name="text_apps_to_the_group">apps to the group</string>
+    <string name="text_done">Done</string>
+    <string name="text_share_with">Share with</string>
+    <string name="text_allow_camera_access">Allow Camera Access</string>
+    <string name="text_allows_applock_to_take_pictures_and_record_videos">Allows AppLock to take pictures and record video?</string>
+    <string name="text_allow_write_access">Allow Media File Access</string>
+    <string name="text_allows_applock_access_to_photos">Allows AppLock access to photos, media and files on your device?</string>
+    <string name="title_policy">Policy</string>
+    <string name="text_no_items_here">No items here</string>
+    <string name="text_add">Add</string>
+    <string name="text_no_application_locked">No application locked</string>
+    <string name="text_no_application">No application</string>
+    <string name="text_all_items">All</string>
+    <string name="text_press_to_add_photo_into_vault">Press + to add photo into vault</string>
+    <string name="text_press_to_add_video_into_vault">Press + to add video into vault</string>
+    <string name="text_press_to_add_audio_into_vault">Press + to add audio into vault</string>
+    <string name="text_press_to_add_file_into_vault">Press + to add file into vault</string>
+    <string name="title_not_enough_storage">Not Enough Storage</string>
+    <string name="title_customize_time">Customize Time</string>
+    <string name="text_default_setting">Default Setting</string>
+    <string name="text_recommend_lock_full_time">Recommend lock full time</string>
+    <string name="text_turn_off_to_customize">Turn off to customize</string>
+    <string name="text_set_timer">Set Timer</string>
+    <string name="text_start">Start</string>
+    <string name="text_end">End</string>
+    <string name="text_every">Every</string>
+    <string name="msg_selected_every_time">Requires at least one date to be selected!</string>
+    <string name="msg_time_start_less_time_end">The start time should be at least 30 minutes before the end time!</string>
+    <string name="msg_ask_locking_new_application">Installation completed! \n Do you want to lock it?</string>
+    <string name="text_protect">Protect</string>
+    <string name="msg_open_file_failed">The device does not support opening this file</string>
+    <string name="device_admin_explanation">For to prevent unauthorized uninstallation of the app</string>
+    <string name="app_name_full_name" translatable="false">App Locker - Robust Secure Trusted</string>
+    <string name="dialog_title_all_access">All File Access</string>
+    <string name="dialog_description_all_access"><![CDATA[For Android 11 & above, you need to allow AppLocker for All file access to move them to secure folder]]></string>
+
+<!--    rate app-->
+    <string name="thank_you">Thank you for your reviewing</string>
+</resources>
