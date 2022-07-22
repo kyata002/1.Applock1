@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eef1fa"
+    android:background="#F2F2F2"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,7 +40,7 @@
             android:id="@+id/imageEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:elevation="12dp"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,31 +48,16 @@
             app:layout_constraintTop_toBottomOf="@id/appbar"
             app:srcCompat="@drawable/ic_email"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/background_image_email"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/appbar"
-            app:srcCompat="@drawable/ic_email"/>
-
-        <View
-            android:id="@+id/viewLine"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            app:layout_constraintBottom_toBottomOf="@id/imageEmail"
-            app:layout_constraintTop_toTopOf="@id/imageEmail"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
             android:layout_marginStart="28dp"
             android:layout_marginEnd="28dp"
             android:background="@drawable/background_change_email"
-            app:layout_constraintTop_toTopOf="@id/viewLine">
+            app:layout_constraintTop_toTopOf="@id/appbar">
 
             <TextView
                 android:id="@+id/tvEmail"

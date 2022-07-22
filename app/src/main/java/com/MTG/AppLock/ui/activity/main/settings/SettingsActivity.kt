@@ -21,7 +21,6 @@ import com.MTG.AppLock.ui.activity.intruders.IntrudersPhotosActivity
 import com.MTG.AppLock.ui.activity.main.OnMainListener
 import com.MTG.AppLock.ui.activity.main.settings.lockscreen.LockScreenActivity
 import com.MTG.AppLock.ui.activity.main.settings.superpassword.SuperPasswordActivity
-import com.MTG.AppLock.ui.activity.main.settings.theme.ThemeActivity
 import com.MTG.AppLock.ui.activity.password.changepassword.ChangePasswordActivity
 import com.MTG.AppLock.ui.activity.password.overlay.activity.OverlayValidationActivity
 import com.MTG.AppLock.ui.activity.policy.PolicyActivity
@@ -189,9 +188,9 @@ class SettingsActivity : BaseActivity<SettingsViewModel>() {
             intent.putExtra(Const.EXTRA_CHANGE_PASSWORD, true)
             startActivityForResult(intent, Const.REQUEST_CODE_CHECK_PASSWORD_AND_CHANGE_PASSWORD)
         }
-        clSettingsLockScreen.setOnClickListener {
-            startActivity(LockScreenActivity.newIntent(this))
-        }
+//        clSettingsLockScreen.setOnClickListener {
+//            startActivity(LockScreenActivity.newIntent(this))
+//        }
         clSettingsIntruder.setOnClickListener {
             startActivity(IntrudersPhotosActivity.newIntent(this))
         }
@@ -199,6 +198,11 @@ class SettingsActivity : BaseActivity<SettingsViewModel>() {
             clSettingsFingerprint.visible()
         } else {
             clSettingsFingerprint.gone()
+        }
+
+        switchShowPathLine.isChecked = viewModel.isShowPathLine()
+        switchShowPathLine.setOnCheckedChangeListener { _, isChecked ->
+            viewModel.setShowPathLine(isChecked)
         }
         switchSettingsFingerprint.isChecked = isFingerprintChecked()
         switchSettingsFingerprint.setOnCheckedChangeListener { _, isChecked ->

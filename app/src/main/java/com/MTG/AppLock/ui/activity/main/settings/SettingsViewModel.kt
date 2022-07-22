@@ -33,4 +33,11 @@ class SettingsViewModel @Inject constructor(val app: Application, val appLockerP
     fun setFinish(isFinish: Boolean) {
         appLockerPreferences.setFinish(isFinish)
     }
+    fun isShowPathLine(): Boolean {
+        return appLockerPreferences.isShowPathLine()
+    }
+
+    fun setShowPathLine(isShowPathLine: Boolean) {
+        return appLockerPreferences.setShowPathLine(isShowPathLine)
+    }
 }

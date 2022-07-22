@@ -6,6 +6,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
+    android:background="#F2F2F2"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -13,7 +14,6 @@
             android:id="@+id/appBarSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:theme="@style/ToolbarTheme"
             android:fitsSystemWindows="true">
 
@@ -30,7 +30,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     app:titleCentered="true"
-                    app:titleTextColor="#000000"
                     app:title="@string/bottom_settings"/>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
@@ -173,7 +172,7 @@
 
                     <ImageView
                         android:id="@+id/imageSettingsChangePassword"
-                        android:layout_width="wrap_content"
+                        android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_settings_change_password" />
@@ -194,58 +193,6 @@
 
                 <ImageView
                     android:id="@+id/imageArrowChangePassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="0dp"
-                    android:paddingEnd="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_arrow_right"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!--  -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clSettingsLockScreen"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="14dp"
-                android:background="@drawable/bg_item_setting">
-
-                <FrameLayout
-                    android:id="@+id/flSettingsSettingsLockScreen"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="#ffffff"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageSettingsLockScreen"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_gravity="center"
-                        app:srcCompat="@drawable/ic_settings_lock_screen"/>
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="@string/title_settings_lock_screen"
-                    android:textColor="#263238"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/imageArrowLockScreen"
-                    app:layout_constraintStart_toEndOf="@id/flSettingsSettingsLockScreen"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/imageArrowLockScreen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="0dp"
@@ -308,6 +255,60 @@
                     app:srcCompat="@drawable/ic_arrow_right"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!--  -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSettingsLockScreen"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_item_setting">
+
+                <FrameLayout
+                    android:id="@+id/flSettingsSettingsLockScreen"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageSettingsLockScreen"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_path_line"/>
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/text_show_path_line"
+                    android:textColor="#263238"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/switchShowPathLine"
+                    app:layout_constraintStart_toEndOf="@id/flSettingsSettingsLockScreen"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchShowPathLine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/selector_switch_compat"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="20dp"
+                    android:thumb="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_right"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <!-- -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clSettingsFingerprint"

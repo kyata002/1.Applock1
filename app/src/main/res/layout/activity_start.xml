@@ -69,14 +69,16 @@
 
     <ImageView
         android:id="@+id/imagePin"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
         android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageCreate2"
-        app:srcCompat="@drawable/ic_change_to_pin"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageCreate2"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="24dp"
+        app:srcCompat="@drawable/ic_digitpin"/>
 
     <TextView
         android:id="@+id/tvTitle"
@@ -115,15 +117,17 @@
 
     <ImageView
         android:id="@+id/imagePattern"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
         android:padding="5dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/imageCreate2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageCreate2"
-        app:srcCompat="@drawable/ic_change_to_pattern"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageCreate2"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="24dp"
+        app:srcCompat="@drawable/ic_pattern"/>
 
     <com.MTG.patternlockview.PatternLockView
         android:id="@+id/patternLockView"
@@ -172,7 +176,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:background="@drawable/selector_background_completed"
-        android:text="@string/text_next"
+        android:text="@string/text_create"
         android:textColor="#4464ed"
         android:textSize="16sp"
         android:visibility="gone"

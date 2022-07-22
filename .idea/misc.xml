@@ -14,6 +14,7 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_dialog_permission.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_email.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_icon_item_app_lock.xml" value="0.121" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_image_email.xml" value="0.158" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_item_app_configuration_bottom.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_item_app_configuration_full.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_item_app_configuration_top.xml" value="0.121" />
@@ -43,6 +44,7 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/iaa.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_a.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_a1.xml" value="0.147" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_a_1.xml" value="0.158" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_app_icon.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_arrow_right.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_audio.xml" value="0.121" />
@@ -103,6 +105,7 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_note_icon.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_notification_small.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_options.xml" value="0.121" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_pattern.xml" value="0.158" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_pin6_number0.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_pin6_number2.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_remove.xml" value="0.121" />
@@ -123,16 +126,22 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_settings_secondary_password.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_show.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_show_blue.xml" value="0.121" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_theme_1_selected.xml" value="0.158" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_theme_5_unselected.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_time.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/ic_video.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/round_search_20.xml" value="0.121" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/selector_background_completed.xml" value="0.158" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/selector_background_dialog_detail.xml" value="0.158" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/selector_ic_bottom_app_lock.xml" value="0.147" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/selector_ic_show.xml" value="0.158" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/selector_ic_show_blue.xml" value="0.158" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/selector_more_customize_time.xml" value="0.158" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/selector_switch_compat.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/switch_off.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/switch_on.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_apply_theme.xml" value="0.2" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_change_password.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_change_password.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_configuration.xml" value="0.25" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_create_new_pattern.xml" value="0.25" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_detail.xml" value="0.25" />
@@ -142,22 +151,22 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_email.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_email_validate.xml" value="0.25" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_first_all.xml" value="0.25" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_forgot_password.xml" value="0.4" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_grouplock.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_intruders_photos.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_forgot_password.xml" value="0.2" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_grouplock.xml" value="0.264" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_intruders_photos.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_intruders_photos_detail.xml" value="0.2" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_lock_screen.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_move.xml" value="0.10400000000000001" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_overlay_validation.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_move.xml" value="0.264" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_overlay_validation.xml" value="0.4" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_personal_list.xml" value="0.264" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_policy.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_recovering_password.xml" value="0.536" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_policy.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_recovering_password.xml" value="0.176" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_selected.xml" value="0.176" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_selected_image.xml" value="0.2" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_settings.xml" value="0.4601113172541744" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_splash.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_start.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_settings.xml" value="0.2" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_splash.xml" value="0.264" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_start.xml" value="0.4" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_supper_password.xml" value="0.4" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_supper_password_validate.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/activity_theme.xml" value="0.264" />
@@ -165,10 +174,10 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/ad_native_item_share.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/bottom_view.xml" value="0.4" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_activate_group_lock.xml" value="0.4" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_apply_theme.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_apply_theme.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_confirm_save_supper_password.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_customize_time.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_delete.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_customize_time.xml" value="0.264" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_delete.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_detail.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_download_theme.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_failed.xml" value="0.10989583333333333" />
@@ -183,7 +192,7 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_permission_all_access.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_permission_camera.xml" value="0.25" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_permission_overlap.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_permission_usage_data_access.xml" value="0.536" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_permission_usage_data_access.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_permission_write.xml" value="0.25" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_rating_app.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/dialog_rename.xml" value="0.2" />
@@ -226,7 +235,11 @@
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/progress_dialog.xml" value="0.536" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/layout/ucrop_activity_photobox.xml" value="0.264" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/menu/edit_configuration.xml" value="0.25" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/menu/home_screen_menu.xml" value="0.25" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/menu/intruder_menu.xml" value="0.25" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/menu/theme_list_menu.xml" value="0.536" />
+        <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/menu/ucrop_menu.xml" value="0.25" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/mipmap/ic_launcher.xml" value="0.121" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/mipmap/ic_launcher_round.xml" value="0.121" />
