@@ -14,7 +14,7 @@
         android:layout_marginEnd="16dp"
         android:clipToPadding="false"
         android:paddingBottom="16dp"
-        app:layoutManager=".ui.view.CustomLinearLayoutManager" />
+        app:layoutManager="com.mtg.applock.ui.view.CustomLinearLayoutManager" />
 
     <TextView
         android:id="@+id/textEmpty"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.MTG.AppLock">
+    package="com.mtg.applock">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -28,13 +28,13 @@
         tools:ignore="QueryAllPackagesPermission" />
 
     <application
-        android:name="com.MTG.AppLock.AppLockerApplication"
+        android:name="com.mtg.applock.AppLockerApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:manageSpaceActivity="com.MTG.AppLock.ui.activity.splash.SplashActivity"
+        android:manageSpaceActivity="com.mtg.applock.ui.activity.splash.SplashActivity"
         android:requestLegacyExternalStorage="true"
         android:resizeableActivity="false"
         android:supportsRtl="false"
@@ -43,13 +43,13 @@
         tools:replace="android:supportsRtl,android:allowBackup"
         tools:ignore="GoogleAppIndexingWarning,LockedOrientationActivity">
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.configuration.ConfigurationActivity"
+            android:name="com.mtg.applock.ui.activity.main.configuration.ConfigurationActivity"
             android:exported="false" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.SettingsActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.first.FirstActivity"
+            android:name="com.mtg.applock.ui.activity.first.FirstActivity"
             android:autoRemoveFromRecents="true"
             android:clearTaskOnLaunch="true"
             android:excludeFromRecents="true"
@@ -65,7 +65,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.MTG.AppLock.ui.activity.splash.SplashActivity"
+            android:name="com.mtg.applock.ui.activity.splash.SplashActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:noHistory="true"
@@ -81,149 +81,149 @@
             android:noHistory="true"
             android:theme="@android:style/Theme.Translucent" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.first.FirstAllActivity"
+            android:name="com.mtg.applock.ui.activity.first.FirstAllActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.lockscreen.LockScreenActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.lockscreen.LockScreenActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.password.changepassword.ChangePasswordActivity"
+            android:name="com.mtg.applock.ui.activity.password.changepassword.ChangePasswordActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.MainActivity"
+            android:name="com.mtg.applock.ui.activity.main.MainActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.password.newpattern.CreateNewPatternActivity"
+            android:name="com.mtg.applock.ui.activity.password.newpattern.CreateNewPatternActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.theme.UCropActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.theme.UCropActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.policy.PolicyActivity"
+            android:name="com.mtg.applock.ui.activity.policy.PolicyActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.password.overlay.activity.OverlayValidationActivity"
+            android:name="com.mtg.applock.ui.activity.password.overlay.activity.OverlayValidationActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreenTheme" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.password.overlay.activity.settings.OverlayValidationForSettingsActivity"
+            android:name="com.mtg.applock.ui.activity.password.overlay.activity.settings.OverlayValidationForSettingsActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.configuration.edit.EditConfigurationActivity"
+            android:name="com.mtg.applock.ui.activity.main.configuration.edit.EditConfigurationActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.theme.ThemeActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.theme.ThemeActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.configuration.detail.DetailConfigurationActivity"
+            android:name="com.mtg.applock.ui.activity.main.configuration.detail.DetailConfigurationActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.apply.ApplyThemeActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.apply.ApplyThemeActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreenTheme" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.selected.SelectedActivity"
+            android:name="com.mtg.applock.ui.activity.selected.SelectedActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.theme.selected.SelectedImageActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.theme.selected.SelectedImageActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.personal.personallist.PersonalListActivity"
+            android:name="com.mtg.applock.ui.activity.main.personal.personallist.PersonalListActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.move.MoveActivity"
+            android:name="com.mtg.applock.ui.activity.move.MoveActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.detail.DetailListActivity"
+            android:name="com.mtg.applock.ui.activity.detail.DetailListActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.detail.DetailActivity"
+            android:name="com.mtg.applock.ui.activity.detail.DetailActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.intruders.IntrudersPhotosActivity"
+            android:name="com.mtg.applock.ui.activity.intruders.IntrudersPhotosActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.intruders.detail.IntrudersPhotosDetailActivity"
+            android:name="com.mtg.applock.ui.activity.intruders.detail.IntrudersPhotosDetailActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.superpassword.validate.SuperPasswordValidateActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.superpassword.validate.SuperPasswordValidateActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.superpassword.SuperPasswordActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.superpassword.SuperPasswordActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.email.EmailActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.email.EmailActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.MTG.AppLock.ui.activity.main.settings.email.emailvalidate.EmailValidateActivity"
+            android:name="com.mtg.applock.ui.activity.main.settings.email.emailvalidate.EmailValidateActivity"
             android:autoRemoveFromRecents="true"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait" />
 
-        <service android:name="com.MTG.AppLock.service.AppLockerService" />
+        <service android:name="com.mtg.applock.service.AppLockerService" />
 
         <receiver
-            android:name="com.MTG.AppLock.service.receiver.BootCompleteReceiver"
+            android:name="com.mtg.applock.service.receiver.BootCompleteReceiver"
             android:exported="true">
             <intent-filter android:priority="999">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.MTG.AppLock.ui.activity.main.settings.AdminReceiver"
+            android:name="com.mtg.applock.ui.activity.main.settings.AdminReceiver"
             android:exported="false"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
@@ -236,7 +236,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.MTG.AppLock.service.receiver.AlarmReceiver"
+            android:name="com.mtg.applock.service.receiver.AlarmReceiver"
             android:enabled="true"
             android:exported="true" />
 

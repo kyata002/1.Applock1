@@ -47,7 +47,7 @@
             app:srcCompat="@drawable/ic_options"/>
     </LinearLayout>
 
-    <com.MTG.library.customview.RoundedImageView
+    <com.mtg.library.customview.RoundedImageView
         android:id="@+id/imageIntruder"
         android:layout_width="match_parent"
         android:layout_height="150dp"

@@ -26,7 +26,7 @@
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/toolbarGroupLock"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#eef1fa">
+        android:background="#F2F2F2">
 
         <FrameLayout
             android:id="@+id/flAds"
@@ -62,7 +62,8 @@
                 android:id="@+id/imageEmpty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_no_group"/>
+                app:srcCompat="@drawable/ic_no_group"
+                />
 
             <TextView
                 android:id="@+id/tvTitleEmpty"

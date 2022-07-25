@@ -129,7 +129,7 @@
         android:layout_marginTop="24dp"
         app:srcCompat="@drawable/ic_pattern"/>
 
-    <com.MTG.patternlockview.PatternLockView
+    <com.mtg.patternlockview.PatternLockView
         android:id="@+id/patternLockView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -144,7 +144,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:pathWidth="6dp"/>
 
-    <com.MTG.pinlock.PinLockView
+    <com.mtg.pinlock.PinLockView
         android:id="@+id/pinLock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

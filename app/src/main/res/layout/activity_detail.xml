@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.MTG.library.customview.imagezoom.ImageViewTouch
+    <com.mtg.library.customview.imagezoom.ImageViewTouch
         android:id="@+id/imageDetail"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appbar"/>
 
-    <com.MTG.AppLock.ui.view.BottomView
+    <com.mtg.applock.ui.view.BottomView
         android:id="@+id/bottomView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appbar">
 
-        <com.MTG.library.customview.LongTextView
+        <com.mtg.library.customview.LongTextView
             android:id="@+id/tvLongDetail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

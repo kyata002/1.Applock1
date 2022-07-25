@@ -10,7 +10,7 @@
 
     <string name="ad_attribution" translatable="false">Ad</string>
 
-    <string name="tab_a_z" translatable="false">A - Z</string>
+    <string name="tab_allapp" translatable="false">All APP</string>
 
     <string name="notification_protecting_title">Protecting your apps</string>
 
@@ -39,7 +39,7 @@
     <string name="pattern_confirm_your_pattern">Confirm your pattern</string>
     <string name="redraw_pattern_title">Draw pattern again to confirm</string>
     <string name="pattern_connect_at_least_4_dots">Connect at least 4 dots</string>
-    <string name="create_pattern_completed">Completed!</string>
+    <string name="create_pattern_completed">Save</string>
 
     <string name="recreate_pattern_error">Patterns do not match. Please Redraw!</string>
 
@@ -126,7 +126,7 @@
     <string name="msg_audios_delete">The audio will be completely deleted and cannot be recovered.</string>
     <string name="msg_files_delete">The file will be completely deleted and cannot be recovered.</string>
     <string name="msg_delete_failed">File deletion failed.</string>
-    <string name="msg_denied_permission">If you reject the permission, you cannot use this service\n\nPlease turn on permissions at [Setting] > [Permission]</string>
+    <string name="msg_denied_permission">You cannot use this function. Please grant Applock this permission to use normally</string>
     <string name="msg_pin_lock_confirm">Please re-enter your password</string>
     <string name="msg_pin_lock_current_password">Please enter your current password</string>
     <string name="msg_pin_lock_error">Confirmation password is incorrect</string>
@@ -145,7 +145,7 @@
     <string name="text_name">Name:</string>
     <string name="title_move_in">Move In</string>
     <string name="title_move_out">Move Out</string>
-    <string name="msg_move_in">Are you sure you want to move this item to the archive?</string>
+    <string name="msg_move_in">Are you sure you want to import this item into security vault?</string>
     <string name="msg_move_out">Are you sure you want to move this item out of the archive?</string>
     <string name="title_operation_successful">Operation succeeded</string>
     <string name="text_save">Save</string>
@@ -156,8 +156,8 @@
     <string name="text_allow">Allow</string>
     <string name="text_no_cancel">No</string>
     <string name="text_yes_do_it">Yes</string>
-    <string name="text_ok_lock_it">OK, Lock it</string>
-    <string name="text_open_app">Open App</string>
+    <string name="text_ok_lock_it">Lock</string>
+    <string name="text_open_app">Open</string>
     <string name="msg_intruder_record">Take a picture after 3 times wrong</string>
     <string name="msg_delete_image_intruder">Are you sure you want to delete the photos?</string>
     <string name="msg_delete_group_lock">Are you sure you want to delete this group?</string>
@@ -182,8 +182,8 @@
     <string name="splash_policy">By proceeding, you agree to the</string>
     <!--    -->
 
-    <string name="text_warning">Warning</string>
-    <string name="msg_failed_more_password">Too many incorrect attempts. Please try again later.</string>
+    <string name="text_warning">Alert</string>
+    <string name="msg_failed_more_password">Too many wrong password input. Try again later.</string>
     <string name="msg_failed_more_fingerprint">Try your fingerprint again in 30 seconds.</string>
     <string name="msg_forgot_password">Forgot password?</string>
     <string name="msg_fingerprint_no_match">Fingerprints do not match</string>
@@ -205,7 +205,7 @@
     <string name="msg_rename_group_lock_failed">Group lock renaming failed</string>
 
     <string name="msg_phone_does_not_support_fingerprints">Your phone does not support fingerprints</string>
-    <string name="msg_add_fingerprint">To use fingerprint lock, please open phone Settings, add fingerprint first</string>
+    <string name="msg_add_fingerprint">Please add your fingerprint on device first</string>
     <string name="msg_apply_prevent_application_uninstall">Prevent uninstalling of force-stop application</string>
 
     <string name="text_create">Create</string>
@@ -216,7 +216,7 @@
     <string name="msg_warning_fingerprint_lock">Too many attempts. Fingerprint sensor is off. Please go to settings to change</string>
     <string name="msg_photo_is_already_in_the_gallery">This photo is already in the gallery</string>
 
-    <string name="msg_unlock_settings">Unlocking Setting will limit the security function. We recommend locking it.</string>
+    <string name="msg_unlock_settings">Unlock all apps.</string>
     <string name="text_unlock">Unlock</string>
     <string name="text_lock">Lock</string>
     <string name="check_network_connection">Please check your Internet connection !!!</string>
@@ -253,13 +253,13 @@
     <string name="bottom_save">Save</string>
     <string name="bottom_share">Share</string>
 
-    <string name="text_sensitive_applications">Sensitive applications</string>
+    <string name="text_sensitive_applications">Recommend</string>
     <string name="text_general">General</string>
 
     <string name="text_choose_from_gallery">Choose from gallery</string>
     <string name="text_completed">Completed</string>
-    <string name="text_click_here_to_unlock_all_apps">Click here to unlock all apps</string>
-    <string name="text_click_here_to_lock">Click here to lock</string>
+    <string name="text_click_here_to_unlock_all_apps">Unlock all apps</string>
+    <string name="text_click_here_to_lock">Lock it </string>
 
     <string name="text_photo">photo</string>
     <string name="text_photos">photos</string>
@@ -282,7 +282,7 @@
     <string name="text_share_with">Share with</string>
     <string name="text_allow_camera_access">Allow Camera Access</string>
     <string name="text_allows_applock_to_take_pictures_and_record_videos">Allows AppLock to take pictures and record video?</string>
-    <string name="text_allow_write_access">Allow Media File Access</string>
+    <string name="text_allow_write_access">Permission required</string>
     <string name="text_allows_applock_access_to_photos">Allows AppLock access to photos, media and files on your device?</string>
     <string name="title_policy">Policy</string>
     <string name="text_no_items_here">No items here</string>
@@ -305,13 +305,13 @@
     <string name="text_every">Every</string>
     <string name="msg_selected_every_time">Requires at least one date to be selected!</string>
     <string name="msg_time_start_less_time_end">The start time should be at least 30 minutes before the end time!</string>
-    <string name="msg_ask_locking_new_application">Installation completed! \n Do you want to lock it?</string>
+    <string name="msg_ask_locking_new_application">Do you want to lock new app?</string>
     <string name="text_protect">Protect</string>
     <string name="msg_open_file_failed">The device does not support opening this file</string>
     <string name="device_admin_explanation">For to prevent unauthorized uninstallation of the app</string>
     <string name="app_name_full_name" translatable="false">App Locker - Robust Secure Trusted</string>
     <string name="dialog_title_all_access">All File Access</string>
-    <string name="dialog_description_all_access"><![CDATA[For Android 11 & above, you need to allow AppLocker for All file access to move them to secure folder]]></string>
+    <string name="dialog_description_all_access">To lock your files, you need to grant applock all file access permission to hide them to security vault</string>
 
 <!--    rate app-->
     <string name="thank_you">Thank you for your reviewing</string>

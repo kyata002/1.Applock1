@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="dialog_title_appear_on_top">Appear On Top</string>
+    <string name="dialog_title_appear_on_top">Display over other app</string>
     <string name="dialog_title_usage_data_access">Usage Data Access</string>
     <string name="dialog_description_appear_on_top_permission">App lock needs permission to display over locked app</string>
     <string name="dialog_description_usage_data_access_permission">App lock needs permission to protect your apps</string>

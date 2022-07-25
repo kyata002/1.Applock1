@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_settings_change_super_password">Change the recovering password</string>
+    <string name="title_settings_change_super_password">Set the recovering password</string>
     <string name="text_old_super_password">The old recovering password</string>
     <string name="text_super_password">New recovering password</string>
     <string name="text_confirm_super_password">Confirm new recovering password</string>
-    <string name="text_password_setting_rules">Password setting rules</string>
+    <string name="text_password_setting_rules">Note</string>
     <string name="text_rules_1">The password must be 6 to 32 characters long</string>
-    <string name="text_rules_2">It is different between uppercase and lowercase characters</string>
-    <string name="text_rules_3">The password must contain both characters and numbers</string>
-    <string name="text_rules_4">Special characters are acceptable</string>
-    <string name="text_rules_5">The password must not contain spaces</string>
+    <string name="text_rules_2">Uppercase and lowercase are recommended for you to secure</string>
+    <string name="text_rules_3">Numerals and characters must both be present in the password.</string>
+    <string name="text_rules_4">You also can use special characters such as</string>
+    <string name="text_rules_5">No spaces allowed in the password.</string>
     <string name="msg_big_update">We have upgraded the system. You can use recovering password to get back your app unlock password if you forget it. Please set a recovering password so that you can continue to use the app.</string>
     <string name="msg_validate_password_0">Please enter a password</string>
     <string name="msg_validate_password_1">The password must contain numbers</string>
@@ -28,8 +28,8 @@
     <string name="msg_supper_password_incorrect">Incorrect recovering password</string>
     <string name="text_notification_update">Notification changed</string>
     <string name="msg_save_supper_password">Are you sure you want to save this password ?</string>
-    <string name="text_understand">Understood</string>
-    <string name="msg_create_super_password">This recovering password is used to recover your app unlock password. We recommend you to save this password.</string>
+    <string name="text_understand">Ok</string>
+    <string name="msg_create_super_password">The recovering password is used when you forgot your unlock password.</string>
     <!--    -->
 
     <string name="msg_email_incorrect">Email is incorrect</string>

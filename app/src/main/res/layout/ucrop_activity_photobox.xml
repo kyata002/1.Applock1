@@ -36,7 +36,7 @@
             android:layout_gravity="center"
             tools:ignore="ContentDescription"/>
 
-        <com.MTG.ucrop.view.UCropView
+        <com.mtg.ucrop.view.UCropView
             android:id="@+id/ucrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

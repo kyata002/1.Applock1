@@ -60,7 +60,7 @@
         app:layout_constraintStart_toEndOf="@id/barrier"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.MTG.library.customview.CustomEditText
+    <com.mtg.library.customview.CustomEditText
         android:id="@+id/edit_search_view"
         android:layout_width="0dp"
         android:layout_height="36dp"
@@ -80,7 +80,7 @@
         app:layout_constraintStart_toEndOf="@id/barrier"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.MTG.library.customview.CustomEditText
+    <com.mtg.library.customview.CustomEditText
         android:id="@+id/edit_name"
         android:layout_width="0dp"
         android:layout_height="36dp"

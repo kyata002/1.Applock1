@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.MTG.library.customview.SquareLayout
+    <com.mtg.library.customview.SquareLayout
         android:id="@+id/slRootImageVideo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="13sp"/>
         </LinearLayout>
-    </com.MTG.library.customview.SquareLayout>
+    </com.mtg.library.customview.SquareLayout>
 
     <LinearLayout
         android:id="@+id/llAudioFile"

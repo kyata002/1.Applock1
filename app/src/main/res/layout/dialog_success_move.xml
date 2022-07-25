@@ -4,54 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageLogoSuccessMove"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:elevation="12dp"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_dialog_success_avatar"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/background_image_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_dialog_success_avatar"/>
-
-    <View
-        android:id="@+id/viewLine"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageLogoSuccessMove"
-        app:layout_constraintTop_toTopOf="@id/imageLogoSuccessMove"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clSuccessMove"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_change_email"
-        app:layout_constraintTop_toTopOf="@id/viewLine">
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageLogoSuccessMove"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="20dp"
+            android:elevation="12dp"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clSuccessMove"
+            app:srcCompat="@drawable/ic_confrim"/>
 
         <TextView
             android:id="@+id/tvSuccessMove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="16dp"
             android:text="@string/title_success"
             android:textColor="#444444"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/imageLogoSuccessMove"/>
 
         <TextView
             android:id="@+id/tvMessageSuccessMove"

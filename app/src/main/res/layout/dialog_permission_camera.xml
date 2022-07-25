@@ -2,83 +2,91 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/background_dialog_permission">
-
-    <ImageView
-        android:id="@+id/imageLogoPermissionCamera"
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/background_dialog_permission"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_header_permission_camera"/>
-
-    <TextView
-        android:id="@+id/tvTitlePermissionCamera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center"
-        android:text="@string/text_allow_camera_access"
-        android:textColor="#263238"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/imageLogoPermissionCamera"/>
-
-    <TextView
-        android:id="@+id/tvMessagePermissionCamera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center"
-        android:text="@string/text_allows_applock_to_take_pictures_and_record_videos"
-        android:textColor="#546e7a"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitlePermissionCamera"/>
-
-    <TextView
-        android:id="@+id/btnDeny"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/selector_background_btn_cancel"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="@string/text_deny"
-        android:textAllCaps="false"
-        android:textColor="#4464ed"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnAllowPermissionCamera"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMessagePermissionCamera"
-        app:layout_constraintWidth_percent="0.4"/>
-
-    <TextView
-        android:id="@+id/btnAllowPermissionCamera"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/selector_background_dialog_detail"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="@string/text_allow"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnDeny"
-        app:layout_constraintTop_toBottomOf="@id/tvMessagePermissionCamera"
-        app:layout_constraintWidth_percent="0.4"/>
+        >
+        <ImageView
+            android:id="@+id/imageLogoPermissionCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_dialog_permission_camera"/>
+
+        <TextView
+            android:id="@+id/tvTitlePermissionCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="@string/text_allow_camera_access"
+            android:textColor="#263238"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imageLogoPermissionCamera"/>
+
+        <TextView
+            android:id="@+id/tvMessagePermissionCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="@string/text_allows_applock_to_take_pictures_and_record_videos"
+            android:textColor="#546e7a"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitlePermissionCamera"/>
+
+        <TextView
+            android:id="@+id/btnDeny"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/selector_background_btn_cancel"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/text_deny"
+            android:textAllCaps="false"
+            android:textColor="#4464ed"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnAllowPermissionCamera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMessagePermissionCamera"
+            app:layout_constraintWidth_percent="0.4"/>
+
+        <TextView
+            android:id="@+id/btnAllowPermissionCamera"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/selector_background_dialog_detail"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/text_allow"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnDeny"
+            app:layout_constraintTop_toBottomOf="@id/tvMessagePermissionCamera"
+            app:layout_constraintWidth_percent="0.4"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

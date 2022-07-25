@@ -39,7 +39,7 @@
         app:tint="@color/colorWhite"
         app:srcCompat="@drawable/ic_lock_active"/>
 
-    <com.MTG.library.customview.TagImageView
+    <com.mtg.library.customview.TagImageView
         android:id="@+id/tagImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

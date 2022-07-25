@@ -22,7 +22,7 @@
 
 
 
-    <com.MTG.library.customview.imagezoom.ImageViewTouch
+    <com.mtg.library.customview.imagezoom.ImageViewTouch
         android:id="@+id/imageIntruder"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -71,7 +71,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toTopOf="@id/bottomView"/>
 
-    <com.MTG.AppLock.ui.view.BottomView
+    <com.mtg.applock.ui.view.BottomView
         android:id="@+id/bottomView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -139,7 +139,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/tvStart"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <com.MTG.AppLock.ui.view.time.TimeSelectedView
+            <com.mtg.applock.ui.view.time.TimeSelectedView
                 android:id="@+id/timeSelectedStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
                 app:layout_constraintStart_toStartOf="@id/tvStart"
                 app:layout_constraintTop_toBottomOf="@id/timeSelectedStart"/>
 
-            <com.MTG.AppLock.ui.view.time.TimeSelectedView
+            <com.mtg.applock.ui.view.time.TimeSelectedView
                 android:id="@+id/timeSelectedEnd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                 app:layout_constraintStart_toStartOf="@id/tvEnd"
                 app:layout_constraintTop_toBottomOf="@id/timeSelectedEnd"/>
 
-            <com.MTG.AppLock.ui.view.time.EveryTimeView
+            <com.mtg.applock.ui.view.time.EveryTimeView
                 android:id="@+id/everyTimeView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
