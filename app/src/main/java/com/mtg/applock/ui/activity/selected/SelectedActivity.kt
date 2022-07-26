@@ -162,7 +162,7 @@ class SelectedActivity : BaseActivity<SelectedViewModel>(), VaultListAdapter.OnS
         builder.setCancelable(false)
         mAllFileAccessDialog?.dismiss()
         mAllFileAccessDialog = builder.create()
-        //   mOverlapPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        mAllFileAccessDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnCancelOverlap.setOnClickListener { mAllFileAccessDialog?.dismiss() }
         view.btnGotoSettingOverlap.setOnClickListener {
             mAllFileAccessDialog?.dismiss()

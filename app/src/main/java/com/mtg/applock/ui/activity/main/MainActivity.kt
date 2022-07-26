@@ -322,7 +322,7 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         builder.setCancelable(false)
         mOverlapPermissionDialog?.dismiss()
         mOverlapPermissionDialog = builder.create()
-     //   mOverlapPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        mOverlapPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnCancelOverlap.setOnClickListener { mOverlapPermissionDialog?.dismiss() }
         view.btnGotoSettingOverlap.setOnClickListener {
             mOverlapPermissionDialog?.dismiss()
@@ -343,7 +343,7 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         builder.setCancelable(false)
         mUsageDataAccessPermissionDialog?.dismiss()
         mUsageDataAccessPermissionDialog = builder.create()
-       // mUsageDataAccessPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        mUsageDataAccessPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnCancelUsageDataAccess.setOnClickListener { mUsageDataAccessPermissionDialog?.dismiss() }
         view.btnGotoSettingUsageDataAccess.setOnClickListener {
             mUsageDataAccessPermissionDialog?.dismiss()

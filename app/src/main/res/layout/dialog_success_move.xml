@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,39 +11,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_change_email"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="54dp">
 
         <ImageView
             android:id="@+id/imageLogoSuccessMove"
             android:layout_width="88dp"
             android:layout_height="88dp"
-            android:layout_marginTop="20dp"
             android:elevation="12dp"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/clSuccessMove"
-            app:srcCompat="@drawable/ic_confrim"/>
+            app:srcCompat="@drawable/ic_confrim" />
 
         <TextView
             android:id="@+id/tvSuccessMove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/title_success"
             android:textColor="#444444"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageLogoSuccessMove"/>
+            app:layout_constraintTop_toBottomOf="@id/imageLogoSuccessMove" />
 
         <TextView
             android:id="@+id/tvMessageSuccessMove"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
             android:gravity="center"
             android:lineSpacingExtra="3dp"
@@ -53,13 +52,13 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSuccessMove"/>
+            app:layout_constraintTop_toBottomOf="@id/tvSuccessMove" />
 
         <TextView
             android:id="@+id/btnOkSuccessMove"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="24dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/selector_background_dialog_detail"
             android:ellipsize="end"
@@ -73,6 +72,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvMessageSuccessMove"
-            app:layout_constraintWidth_percent="0.6"/>
+            app:layout_constraintWidth_percent="0.6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

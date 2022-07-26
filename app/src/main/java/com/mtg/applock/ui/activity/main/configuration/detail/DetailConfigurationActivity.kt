@@ -79,6 +79,7 @@ class DetailConfigurationActivity : BaseActivity<DetailConfigurationViewModel>()
         val view: View =
             LayoutInflater.from(this).inflate(R.layout.dialog_permission_overlap, null, false)
         builder.setView(view)
+        mOverlapPermissionDialog?.window?.setBackgroundDrawableResource(android.R.color.transparent);
         mOverlapPermissionDialog?.dismiss()
         mOverlapPermissionDialog = builder.create()
         mOverlapPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -107,6 +108,7 @@ class DetailConfigurationActivity : BaseActivity<DetailConfigurationViewModel>()
             .inflate(R.layout.dialog_permission_usage_data_access, null, false)
         builder.setView(view)
         builder.setCancelable(false)
+        mOverlapPermissionDialog?.window?.setBackgroundDrawableResource(android.R.color.transparent);
         mUsageDataAccessPermissionDialog?.dismiss()
         mUsageDataAccessPermissionDialog = builder.create()
         mUsageDataAccessPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -189,19 +191,15 @@ class DetailConfigurationActivity : BaseActivity<DetailConfigurationViewModel>()
         val title = if (count > 1) {
             String.format(
                 Locale.getDefault(),
-                "%s (%d) %s",
+                "%s (%d)",
                 getString(R.string.text_click_here_to_add),
-                count
-//                getString(R.string.text_apps_to_the_group)
-            )
+                count)
         } else {
             String.format(
                 Locale.getDefault(),
-                "%s (%d) %s",
+                "%s (%d)" ,
                 getString(R.string.text_click_here_to_add),
-                count
-//                getString(R.string.text_app_to_the_group)
-            )
+                count)
         }
         btnSave.text = title
     }

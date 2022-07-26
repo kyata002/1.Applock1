@@ -25,7 +25,9 @@
             android:id="@+id/tabLayout"
             style="@style/Widget.MaterialComponents.TabLayout.PrimarySurface"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            />
     </com.google.android.material.appbar.AppBarLayout>
 
 

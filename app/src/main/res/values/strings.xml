@@ -173,7 +173,7 @@
     <string name="title_settings_prevent_uninstall">Prevent uninstalling</string>
     <string name="title_settings_locking_new_application">Ask for locking new application</string>
     <string name="title_settings_privacy_policy">Privacy Policy</string>
-    <string name="title_settings_rate_application">Rate application</string>
+    <string name="title_settings_rate_application">Rate us</string>
     <string name="title_forgot_password">Forgot password</string>
     <string name="hint_enter_name_group_lock">Enter name group lock</string>
     <string name="text_invalid_email_address">Invalid email address</string>
@@ -276,7 +276,7 @@
     <string name="msg_requires_at_least_one_application">Requires at least one application</string>
 
     <string name="text_click_here_to_add">Add to group</string>
-    <string name="text_app_to_the_group">app to the group</string>
+    <string name="text_app_to_the_group"></string>
     <string name="text_apps_to_the_group">apps to the group</string>
     <string name="text_done">Done</string>
     <string name="text_share_with">Share with</string>
