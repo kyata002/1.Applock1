@@ -185,7 +185,7 @@ class AppLockerPreferences @Inject constructor(val context: Context) {
         }
     }
 
-    fun isShowPathLine(): Boolean = sharedPref.getBoolean(KEY_SHOW_PATH_LINE, false)
+    fun isShowPathLine(): Boolean = sharedPref.getBoolean(KEY_SHOW_PATH_LINE, true)
 
     fun setShowPasswordUninstall(isShowPasswordUninstall: Boolean) {
         with(sharedPref.edit()) {

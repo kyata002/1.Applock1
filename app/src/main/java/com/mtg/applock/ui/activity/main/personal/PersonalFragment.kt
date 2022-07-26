@@ -182,27 +182,22 @@ class PersonalFragment : BaseFragment<PersonalViewModel>(), View.OnClickListener
                 R.id.ivImages, R.id.tvImages, R.id.vImages -> {
                     intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_IMAGES)
                     intent.putExtra(Const.EXTRA_NUMBER, mNumberImages)
-                    checkWay=1
                 }
                 R.id.ivVideos, R.id.tvVideos, R.id.vVideos -> {
                     intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_VIDEOS)
                     intent.putExtra(Const.EXTRA_NUMBER, mNumberVideos)
-                    checkWay=2
                 }
                 R.id.ivAudios, R.id.tvAudios, R.id.vAudios -> {
                     intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_AUDIOS)
                     intent.putExtra(Const.EXTRA_NUMBER, mNumberAudios)
-                    checkWay=3
                 }
                 R.id.ivFiles, R.id.tvFiles, R.id.vFiles -> {
                     intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_FILES)
                     intent.putExtra(Const.EXTRA_NUMBER, mNumberFiles)
-                    checkWay=4
                 }
                 else -> {
                     intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_IMAGES)
                     intent.putExtra(Const.EXTRA_NUMBER, mNumberImages)
-                    checkWay=1
                 }
             }
             startActivityForResult(intent, Const.REQUEST_CODE_UPDATE_VAULT)
@@ -277,7 +272,6 @@ class PersonalFragment : BaseFragment<PersonalViewModel>(), View.OnClickListener
 
     companion object {
         fun newInstance() = PersonalFragment()
-        var checkWay:Int = 0
     }
 
     interface OnRequestWritePermissionsListener {

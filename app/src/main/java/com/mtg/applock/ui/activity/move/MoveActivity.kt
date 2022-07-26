@@ -1,5 +1,6 @@
 package com.mtg.applock.ui.activity.move
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -11,8 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.mtg.applock.R
 import com.mtg.applock.model.EncryptorModel
 import com.mtg.applock.model.ItemDetail
-import com.mtg.applock.ui.activity.main.personal.PersonalFragment
-import com.mtg.applock.ui.activity.main.personal.personallist.PersonalListActivity
 import com.mtg.applock.ui.adapter.move.MoveAdapter
 import com.mtg.applock.ui.base.BaseActivity
 import com.mtg.applock.util.Const
@@ -95,27 +94,9 @@ class MoveActivity : BaseActivity<MoveViewModel>() {
         mSuccessDialog = builder.create()
         mSuccessDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnOkSuccessMove.setOnClickListener {
-            val intent = PersonalListActivity.newIntent(this)
-            if(PersonalFragment.checkWay==1){
-                check = 1
-                intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_IMAGES)
-                startActivityForResult(intent,Const.REQUEST_CODE_UPDATE_VAULT)
-            }else if(PersonalFragment.checkWay==2){
-                check = 1
-                intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_VIDEOS)
-                startActivityForResult(intent,Const.REQUEST_CODE_UPDATE_VAULT)
-            }else if(PersonalFragment.checkWay==3){
-                check = 1
-                intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_AUDIOS)
-                startActivityForResult(intent,Const.REQUEST_CODE_UPDATE_VAULT)
-            }else{
-                check = 1
-                intent.putExtra(Const.EXTRA_TYPE, Const.TYPE_FILES)
-                startActivityForResult(intent,Const.REQUEST_CODE_UPDATE_VAULT)
-            }
-            PersonalFragment.checkWay=0
-            finish()
+            onBackPressed()
         }
+
     }
 
     private fun getCountWithType(): Int {
@@ -136,6 +117,10 @@ class MoveActivity : BaseActivity<MoveViewModel>() {
             return
         }
         mSuccessDialog?.dismiss()
+        val intent = Intent()
+        intent.putExtra(Const.EXTRA_TYPE, mType)
+        setResult(Activity.RESULT_OK, intent)
+        finish()
     }
 
     private fun updateProgress(value: Int, path: String) {
@@ -174,6 +159,5 @@ class MoveActivity : BaseActivity<MoveViewModel>() {
         fun newIntent(context: Context): Intent {
             return Intent(context, MoveActivity::class.java)
         }
-        var check = 1
     }
 }

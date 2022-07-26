@@ -10,7 +10,7 @@
 
     <string name="ad_attribution" translatable="false">Ad</string>
 
-    <string name="tab_allapp" translatable="false">All APP</string>
+    <string name="tab_allapp" translatable="false">All Apps</string>
 
     <string name="notification_protecting_title">Protecting your apps</string>
 
@@ -197,7 +197,7 @@
 
     <string name="hint_search">Search</string>
     <string name="msg_group_lock_name_cannot_be_empty">Group lock name cannot be empty</string>
-    <string name="msg_create_group_lock_successfully">Created a new group lock successfully</string>
+    <string name="msg_create_group_lock_successfully">Locked Successfully</string>
     <string name="msg_create_group_lock_failed">New group lock creating failed</string>
     <string name="msg_update_group_lock_successfully">Updated group lock successfully</string>
     <string name="msg_update_group_lock_failed">Group lock updating failed</string>
@@ -259,7 +259,7 @@
     <string name="text_choose_from_gallery">Choose from gallery</string>
     <string name="text_completed">Completed</string>
     <string name="text_click_here_to_unlock_all_apps">Unlock all apps</string>
-    <string name="text_click_here_to_lock">Lock it </string>
+    <string name="text_click_here_to_lock">Lock</string>
 
     <string name="text_photo">photo</string>
     <string name="text_photos">photos</string>
@@ -275,7 +275,7 @@
     <string name="text_press_to_add_group_lock">Click Add to lock in group</string>
     <string name="msg_requires_at_least_one_application">Requires at least one application</string>
 
-    <string name="text_click_here_to_add">Click here to add</string>
+    <string name="text_click_here_to_add">Add to group</string>
     <string name="text_app_to_the_group">app to the group</string>
     <string name="text_apps_to_the_group">apps to the group</string>
     <string name="text_done">Done</string>

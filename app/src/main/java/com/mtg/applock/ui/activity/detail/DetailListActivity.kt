@@ -44,7 +44,6 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
-import com.google.android.gms.ads.nativead.NativeAd
 
 import com.mtg.library.customview.CustomToolbar
 import com.mtg.pinlock.extension.decodeBase64
@@ -57,6 +56,7 @@ import kotlinx.android.synthetic.main.layout_view_controller_for_audio.*
 import kotlinx.android.synthetic.main.popup_more_audio.view.*
 import java.io.File
 import com.mtg.applock.R
+import com.mtg.applock.ui.activity.move.MoveActivity
 
 class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapter.OnSelectedDetailListener {
     private var mDetailListAdapterV2: DetailListAdapter? = null
@@ -69,7 +69,6 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
     private var mConfirmDialog: AlertDialog? = null
     private var mConfirmOneDialog: AlertDialog? = null
     private var mConfirmDeleteDialog: AlertDialog? = null
-    private var mNativeAd: NativeAd? = null
     private var mExoPlayer: SimpleExoPlayer? = null
     private var mFactory: DataSource.Factory? = null
     private var mConcatenatingMediaSource: ConcatenatingMediaSource? = null
@@ -490,7 +489,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
             }
         }
         val encryptor = EncryptorModel(Const.TYPE_DECODE, itemDetailList)
-//        val intent = MoveActivity.newIntent(this)
+        val intent = MoveActivity.newIntent(this)
         intent.putExtra(Const.EXTRA_DATA, encryptor)
         intent.putExtra(Const.EXTRA_TYPE, mType)
         startActivityForResult(intent, Const.REQUEST_CODE_MOVE_FILE)
@@ -756,7 +755,6 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
         mConfirmDialog?.dismiss()
         mConfirmOneDialog?.dismiss()
         mConfirmDeleteDialog?.dismiss()
-        mNativeAd?.destroy()
         releaseExo()
         super.onDestroy()
     }

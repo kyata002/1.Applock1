@@ -191,16 +191,16 @@ class DetailConfigurationActivity : BaseActivity<DetailConfigurationViewModel>()
                 Locale.getDefault(),
                 "%s (%d) %s",
                 getString(R.string.text_click_here_to_add),
-                count,
-                getString(R.string.text_apps_to_the_group)
+                count
+//                getString(R.string.text_apps_to_the_group)
             )
         } else {
             String.format(
                 Locale.getDefault(),
                 "%s (%d) %s",
                 getString(R.string.text_click_here_to_add),
-                count,
-                getString(R.string.text_app_to_the_group)
+                count
+//                getString(R.string.text_app_to_the_group)
             )
         }
         btnSave.text = title

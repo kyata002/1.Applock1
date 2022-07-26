@@ -181,20 +181,14 @@ class PersonalListActivity : BaseActivity<PersonalListViewModel>(),
         mVaultList.forEach {
             number += it.number
         }
-        if (MoveActivity.check == 1) {
-            MoveActivity.check = 0
-            val intent = MainActivity.newIntent(this)
-            startActivityForResult(intent, 2)
-        } else {
-            when {
-                mNumber != number -> {
-                    val intent = Intent()
-                    intent.putExtra(Const.EXTRA_TYPE, mType)
-                    setResult(Activity.RESULT_OK, intent)
-                    finish()
-                }
-                else -> super.onBackPressed()
+        when {
+            mNumber != number -> {
+                val intent = Intent()
+                intent.putExtra(Const.EXTRA_TYPE, mType)
+                setResult(Activity.RESULT_OK, intent)
+                finish()
             }
+            else -> super.onBackPressed()
         }
     }
 
