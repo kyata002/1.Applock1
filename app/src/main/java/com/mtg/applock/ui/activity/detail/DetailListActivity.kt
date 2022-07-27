@@ -170,7 +170,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
         recyclerList.layoutManager = GridLayoutManager(this, getCountWithType())
         recyclerList.removeBlink()
         loadData()
-        viewModel.getDetailListLiveData().observe(this, {
+        viewModel.getDetailListLiveData().observe(this) {
             hideProgressBar()
             mDetailList.clear()
             mDetailList.addAll(it)
@@ -183,7 +183,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
             // exoplayer
             initExoPlayer()
             updateMediaSource()
-        })
+        }
         toolbar.setOnActionToolbarFull(object : CustomToolbar.OnActionToolbarFull {
             override fun onBack() {
                 onBackPressed()
@@ -246,7 +246,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
         buildConfirmDialog()
         buildConfirmOneDialog()
         buildConfirmDeleteDialog()
-        viewModel.getProgressLiveData().observe(this, {
+        viewModel.getProgressLiveData().observe(this) {
             if (mNumber != 0) {
                 val builder = StringBuilder()
                 builder.append("" + it * 100 / mNumber)
@@ -258,7 +258,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
                     tvAnimationLoading.visible()
                 }
             }
-        })
+        }
     }
 
     private fun updateMediaSource() {
@@ -387,8 +387,10 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
                     val duration = mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)
                     //
                     view.tResolution.setText(R.string.text_duration)
-                    view.tvResolution.text = DateUtils.formatElapsedTime(duration?.toLong()
-                            ?: 0 / 1000)
+                    view.tvResolution.text = DateUtils.formatElapsedTime(
+                        duration?.toLong()
+                            ?: (0 / 1000)
+                    )
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -405,8 +407,10 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
                     mediaMetadataRetriever.setDataSource(file.absolutePath)
                     val duration = mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)
                     view.tResolution.setText(R.string.text_duration)
-                    view.tvResolution.text = DateUtils.formatElapsedTime(duration?.toLong()
-                            ?: 0 / 1000)
+                    view.tvResolution.text = DateUtils.formatElapsedTime(
+                        duration?.toLong()
+                            ?: (0 / 1000)
+                    )
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -542,7 +546,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
     }
 
     private fun deleteFile() {
-        mItemDetail?.let {
+        mItemDetail?.let{
             val file = File(it.path)
             val success = file.delete()
             if (success) {
@@ -565,7 +569,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
                             mConcatenatingMediaSource?.removeMediaSource(index)
                         }
                     }
-                    setupToolbar()
+//                    setupToolbar()
                     updateRecyclerView()
                 } else {
                     Toasty.showToast(this, R.string.msg_delete_failed, Toasty.ERROR)
@@ -574,6 +578,8 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
                 Toasty.showToast(this, R.string.msg_delete_failed, Toasty.ERROR)
             }
         } ?: deleteAll()
+        toolbar.setShowTvActionExtend(false)
+
     }
 
     private fun updateRecyclerView() {

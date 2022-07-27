@@ -59,7 +59,6 @@ import kotlinx.android.synthetic.main.dialog_not_enough_storage.view.*
 import kotlinx.android.synthetic.main.dialog_permission_overlap.view.*
 import kotlinx.android.synthetic.main.dialog_permission_usage_data_access.view.*
 import kotlinx.android.synthetic.main.dialog_permission_write.view.*
-import kotlinx.android.synthetic.main.dialog_rating_app.view.*
 import kotlinx.android.synthetic.main.dialog_supper_password.view.*
 import kotlinx.android.synthetic.main.dialog_warning_close_app.view.*
 

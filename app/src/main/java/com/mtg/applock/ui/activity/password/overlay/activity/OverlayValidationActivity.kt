@@ -104,7 +104,7 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                 }
             }
         })
-        viewModel.getThemeLiveData().observe(this, {
+        viewModel.getThemeLiveData().observe(this) {
             it?.let { theme ->
                 when (theme.typeTheme) {
                     ThemeUtils.TYPE_PIN -> {
@@ -114,7 +114,11 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                             avatarLock.gone()
                             tvTitle.gone()
                             tvTitlePin.visible()
-                            Toasty.showToast(this@OverlayValidationActivity, R.string.msg_pin_lock_current_password, Toasty.NORMAL)
+                            Toasty.showToast(
+                                this@OverlayValidationActivity,
+                                R.string.msg_pin_lock_current_password,
+                                Toasty.NORMAL
+                            )
                         } else {
                             tvTitle.gone()
                             tvTitlePin.gone()
@@ -127,7 +131,11 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                             avatarLock.gone()
                             tvTitle.visible()
                             tvTitlePin.gone()
-                            Toasty.showToast(this@OverlayValidationActivity, R.string.pattern_draw_your_unlock_current_pattern, Toasty.NORMAL)
+                            Toasty.showToast(
+                                this@OverlayValidationActivity,
+                                R.string.pattern_draw_your_unlock_current_pattern,
+                                Toasty.NORMAL
+                            )
                         } else {
                             tvTitle.gone()
                             tvTitlePin.gone()
@@ -145,16 +153,29 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                     } else {
                         //                        imageBackground.setImageDrawable(drawable)
                         pinLock.setImageDrawablePinLock(drawable)
-                        Glide.with(this).load(drawable).apply(RequestOptions().downsample(DownsampleStrategy.CENTER_INSIDE).skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)).into(imageBackground)
+                        Glide.with(this).load(drawable).apply(
+                            RequestOptions().downsample(DownsampleStrategy.CENTER_INSIDE)
+                                .skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
+                        ).into(imageBackground)
                     }
                 }
                 if (theme.selectedResId != 0) {
-                    patternLockView.setBitmapSelected(AppCompatResources.getDrawable(this, theme.selectedResId)?.toBitmap())
+                    patternLockView.setBitmapSelected(
+                        AppCompatResources.getDrawable(
+                            this,
+                            theme.selectedResId
+                        )?.toBitmap()
+                    )
                 } else {
                     patternLockView.setBitmapSelected(BitmapFactory.decodeFile(theme.selectedDownload))
                 }
                 if (theme.unselectedResId != 0) {
-                    patternLockView.setBitmapUnSelected(AppCompatResources.getDrawable(this, theme.unselectedResId)?.toBitmap())
+                    patternLockView.setBitmapUnSelected(
+                        AppCompatResources.getDrawable(
+                            this,
+                            theme.unselectedResId
+                        )?.toBitmap()
+                    )
                 } else {
                     patternLockView.setBitmapUnSelected(BitmapFactory.decodeFile(theme.unselectedDownload))
                 }
@@ -162,21 +183,25 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                 val bitmapSelectedList = mutableListOf<Bitmap>()
                 if (theme.selectedResIdList.isNotEmpty()) {
                     theme.selectedResIdList.forEach { bitmapSelected ->
-                        AppCompatResources.getDrawable(this, bitmapSelected)?.toBitmap()?.let { it1 -> bitmapSelectedList.add(it1) }
+                        AppCompatResources.getDrawable(this, bitmapSelected)?.toBitmap()
+                            ?.let { it1 -> bitmapSelectedList.add(it1) }
                     }
                 }
                 patternLockView.setBitmapSelectedList(bitmapSelectedList)
                 val bitmapUnselectedList = mutableListOf<Bitmap>()
                 if (theme.unselectedResIdList.isNotEmpty()) {
                     theme.unselectedResIdList.forEach { bitmapUnselected ->
-                        AppCompatResources.getDrawable(this, bitmapUnselected)?.toBitmap()?.let { it1 -> bitmapUnselectedList.add(it1) }
+                        AppCompatResources.getDrawable(this, bitmapUnselected)?.toBitmap()
+                            ?.let { it1 -> bitmapUnselectedList.add(it1) }
                     }
                 }
                 patternLockView.setBitmapUnSelectedList(bitmapUnselectedList)
                 //
                 if (theme.lineColorResId != 0) {
-                    patternLockView.correctStateColor = ContextCompat.getColor(this, theme.lineColorResId)
-                    patternLockView.normalStateColor = ContextCompat.getColor(this, theme.lineColorResId)
+                    patternLockView.correctStateColor =
+                        ContextCompat.getColor(this, theme.lineColorResId)
+                    patternLockView.normalStateColor =
+                        ContextCompat.getColor(this, theme.lineColorResId)
                 } else {
                     try {
                         if (!TextUtils.isEmpty(theme.lineColor) && theme.lineColor.startsWith("#")) {
@@ -187,13 +212,24 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                         e.printStackTrace()
                     }
                 }
-                val builder = PinLockConfiguration.Builder().setMode(PinLockConfiguration.Config.MODE_AUTH).setDeletePadding(theme.isDeletePadding).setNumberPadding(theme.isNumberPadding).setDeletePadding(theme.deletePadding).setResPinList(theme.buttonResList).setPinUrlList(theme.buttonDownloadList()).setResColorButton(theme.colorButtonResId).setResSelectorCheckbox(theme.selectorCheckboxColorResId).setColorCheckbox(theme.selectorCheckboxColor).setResColorMessage(theme.textMsgColorResId).setColorMessage(theme.textMsgColor).setNextTitle(getString(R.string.text_create))
+                val builder =
+                    PinLockConfiguration.Builder().setMode(PinLockConfiguration.Config.MODE_AUTH)
+                        .setDeletePadding(theme.isDeletePadding)
+                        .setNumberPadding(theme.isNumberPadding)
+                        .setDeletePadding(theme.deletePadding).setResPinList(theme.buttonResList)
+                        .setPinUrlList(theme.buttonDownloadList())
+                        .setResColorButton(theme.colorButtonResId)
+                        .setResSelectorCheckbox(theme.selectorCheckboxColorResId)
+                        .setColorCheckbox(theme.selectorCheckboxColor)
+                        .setResColorMessage(theme.textMsgColorResId)
+                        .setColorMessage(theme.textMsgColor)
+                        .setNextTitle(getString(R.string.text_create))
                 viewModel.getPinLock()?.let { pinLock ->
                     builder.setCodeLength(pinLock.decodeBase64().length)
                 }
                 pinLock.applyConfiguration(builder.build())
             }
-        })
+        }
         patternLockView.addPatternLockListener(object : SimplePatternListener() {
             override fun onComplete(pattern: MutableList<PatternLockView.Dot>?) {
                 super.onComplete(pattern)

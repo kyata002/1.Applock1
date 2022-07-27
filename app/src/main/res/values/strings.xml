@@ -2,13 +2,8 @@
     <string name="app_name" translatable="false">App Lock</string>
     <!-- AD unit ids-->
     <string name="mobile_ad_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="banner_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="full_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="native_id" translatable="false">ca-app-pub-3940256099942544/2247696110</string>
 
     <string name="policy_url" translatable="false">YOUR_PRIVACY_URL_HERE</string>
-
-    <string name="ad_attribution" translatable="false">Ad</string>
 
     <string name="tab_allapp" translatable="false">All Apps</string>
 
@@ -60,8 +55,8 @@
 
     <!-- Call Blocker Activity texts -->
 
-    <string name="title_photo_empty_page">No private image</string>
-    <string name="title_video_empty_page">No private video</string>
+    <string name="title_photo_empty_page">Empty images</string>
+    <string name="title_video_empty_page">Empty videos</string>
     <string name="title_audio_empty_page">Empty audios</string>
     <string name="title_file_empty_page">Empty files</string>
 
@@ -98,6 +93,7 @@
     <string name="txt_yes">Yes</string>
     <string name="txt_no">No</string>
     <string name="txt_check">Check</string>
+    <string name="txt_continue">Continue</string>
     <string name="txt_skip">Skip</string>
     <string name="msg_please_choose_at_least_one">Please choose at least one</string>
     <string name="tab_pattern">Pattern</string>
@@ -105,7 +101,6 @@
     <string name="tab_wallpaper">Wallpaper</string>
 
     <string name="txt_apply">Apply</string>
-    <string name="title_set_lock_wallpaper">Set lock wallpaper</string>
     <string name="title_confirm">Confirm</string>
     <string name="msg_cannot_retrieve_cropped_image">Cannot retrieve cropped image</string>
     <string name="msg_change_lock_wallpaper_succeed">Changed lock wallpaper successfully</string>
@@ -147,7 +142,7 @@
     <string name="title_move_out">Move Out</string>
     <string name="msg_move_in">Are you sure you want to import this item into security vault?</string>
     <string name="msg_move_out">Are you sure you want to move this item out of the archive?</string>
-    <string name="title_operation_successful">Operation succeeded</string>
+    <string name="title_operation_successful">Success</string>
     <string name="text_save">Save</string>
     <string name="text_save_and_active">Save and active</string>
     <string name="text_cancel">Cancel</string>
@@ -166,10 +161,8 @@
     <string name="msg_intruder_photo_dialog">Somebody is trying to intrude into your phone</string>
 
     <string name="title_settings_activate_fingerprint">Activate fingerprint</string>
-    <string name="title_settings_theme">Theme</string>
     <string name="title_settings_change_password">Change password</string>
     <string name="title_settings_capture_the_intruder">Intruder selfie</string>
-    <string name="title_settings_lock_screen">Lock screen</string>
     <string name="title_settings_prevent_uninstall">Prevent uninstalling</string>
     <string name="title_settings_locking_new_application">Ask for locking new application</string>
     <string name="title_settings_privacy_policy">Privacy Policy</string>
@@ -177,7 +170,6 @@
     <string name="title_forgot_password">Forgot password</string>
     <string name="hint_enter_name_group_lock">Enter name group lock</string>
     <string name="text_invalid_email_address">Invalid email address</string>
-    <string name="text_vibrate">Vibrate</string>
     <string name="text_show_path_line">Show path line</string>
     <string name="splash_policy">By proceeding, you agree to the</string>
     <!--    -->
@@ -195,7 +187,6 @@
     <string name="msg_successfully_activated">Activated successfully</string>
     <string name="msg_successfully_deactivated">Deactivated successfully</string>
 
-    <string name="hint_search">Search</string>
     <string name="msg_group_lock_name_cannot_be_empty">Group lock name cannot be empty</string>
     <string name="msg_create_group_lock_successfully">Locked Successfully</string>
     <string name="msg_create_group_lock_failed">New group lock creating failed</string>
@@ -216,7 +207,7 @@
     <string name="msg_warning_fingerprint_lock">Too many attempts. Fingerprint sensor is off. Please go to settings to change</string>
     <string name="msg_photo_is_already_in_the_gallery">This photo is already in the gallery</string>
 
-    <string name="msg_unlock_settings">Unlock all apps.</string>
+    <string name="msg_unlock_settings">Unlock Setting will limit the security function. We recomend locking it.</string>
     <string name="text_unlock">Unlock</string>
     <string name="text_lock">Lock</string>
     <string name="check_network_connection">Please check your Internet connection !!!</string>
@@ -242,7 +233,7 @@
     <string name="msg_file_not_found">File not found</string>
     <string name="msg_file_has_problem">The file has a problem, try again!</string>
 
-    <string name="msg_not_enough_memory_intruder">Insufficient storage space on the device to take pictures. Free up for more space.</string>
+    <string name="msg_not_enough_memory_intruder">Insufficient stora ge space on the device to take pictures. Free up for more space.</string>
     <string name="msg_not_enough_memory_download">Insufficient storage space on the device to download. Free up for more space.</string>
 
     <string name="bottom_app_lock">App Lock</string>
@@ -276,9 +267,6 @@
     <string name="msg_requires_at_least_one_application">Requires at least one application</string>
 
     <string name="text_click_here_to_add">Add to group</string>
-    <string name="text_app_to_the_group"></string>
-    <string name="text_apps_to_the_group">apps to the group</string>
-    <string name="text_done">Done</string>
     <string name="text_share_with">Share with</string>
     <string name="text_allow_camera_access">Allow Camera Access</string>
     <string name="text_allows_applock_to_take_pictures_and_record_videos">Allows AppLock to take pictures and record video?</string>
@@ -287,7 +275,6 @@
     <string name="title_policy">Policy</string>
     <string name="text_no_items_here">No items here</string>
     <string name="text_add">Add</string>
-    <string name="text_no_application_locked">No application locked</string>
     <string name="text_no_application">No application</string>
     <string name="text_all_items">All</string>
     <string name="text_press_to_add_photo_into_vault">Tap the Add button at the bottom to hide picture</string>
@@ -309,10 +296,8 @@
     <string name="text_protect">Protect</string>
     <string name="msg_open_file_failed">The device does not support opening this file</string>
     <string name="device_admin_explanation">For to prevent unauthorized uninstallation of the app</string>
-    <string name="app_name_full_name" translatable="false">App Locker - Robust Secure Trusted</string>
     <string name="dialog_title_all_access">All File Access</string>
     <string name="dialog_description_all_access">To lock your files, you need to grant applock all file access permission to hide them to security vault</string>
 
 <!--    rate app-->
-    <string name="thank_you">Thank you for your reviewing</string>
 </resources>
