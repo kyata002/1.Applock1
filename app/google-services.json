@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "abc",
+    "project_id": "abc",
+    "storage_bucket": "abc"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "abc",
+        "android_client_info": {
+          "package_name": "com.MTG.AppLock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "abc",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "abc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "abc",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

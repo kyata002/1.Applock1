@@ -133,7 +133,7 @@ object EncryptionFileManager {
             Const.TYPE_VIDEOS -> {
             }
             Const.TYPE_AUDIOS -> {
-                return R.drawable.ic_music_default
+                return R.drawable.ic_avatar_audio
             }
             Const.TYPE_FILES -> {
                 val pathTemp = path.toLowerCase(Locale.getDefault())
@@ -165,7 +165,7 @@ object EncryptionFileManager {
                 }
             }
         }
-        return R.drawable.ic_music_default
+        return R.drawable.ic_avatar_audio
     }
 
     fun getListFileWithType(type: Int, isDecode: Boolean, allHide: Boolean): MutableList<ItemDetail> {
@@ -293,7 +293,7 @@ object EncryptionFileManager {
                                             fileParent?.let { parent ->
                                                 if (parent.absolutePath.startsWith(getExternalAbsolutePath())) {
                                                     if (albumList.isEmpty()) {
-                                                        albumList.add(Album(name = parent.name, path = parent.absolutePath, resIdThumbnail = R.drawable.ic_music_default, number = 1, type = type))
+                                                        albumList.add(Album(name = parent.name, path = parent.absolutePath, resIdThumbnail = R.drawable.ic_album_audio, number = 1, type = type))
                                                         progressCallback?.progress(getNumber(albumList))
                                                     } else {
                                                         var albumTemp: Album? = null
@@ -305,7 +305,7 @@ object EncryptionFileManager {
                                                         albumTemp?.let { album ->
                                                             album.number += 1
                                                         }
-                                                                ?: albumList.add(Album(name = parent.name, path = parent.absolutePath, resIdThumbnail = R.drawable.ic_music_default, number = 1, type = type))
+                                                                ?: albumList.add(Album(name = parent.name, path = parent.absolutePath, resIdThumbnail = R.drawable.ic_avatar_audio, number = 1, type = type))
                                                         progressCallback?.progress(getNumber(albumList))
                                                     }
                                                 }

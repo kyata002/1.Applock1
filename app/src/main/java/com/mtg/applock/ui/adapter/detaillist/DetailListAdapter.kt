@@ -17,6 +17,7 @@ import com.mtg.applock.util.Const
 import com.mtg.applock.util.extensions.gone
 import com.mtg.applock.util.extensions.visible
 import com.bumptech.glide.Glide
+import com.mtg.applock.ui.activity.main.MainActivity
 import com.mtg.library.customview.SquareLayout
 import kotlinx.android.synthetic.main.item_detail.view.*
 
@@ -78,7 +79,6 @@ class DetailListAdapter(private val mContext: Context, private val mItemDetailLi
         holder.textDuration.text = itemDetail.tvSize
 
         holder.slRootImageVideo.setOnClickListener {
-
             itemDetail.isSelected = !itemDetail.isSelected
             mOnSelectedDetailListener.onSelectedDetail(itemDetail, position)
             notifyItemChanged(position)

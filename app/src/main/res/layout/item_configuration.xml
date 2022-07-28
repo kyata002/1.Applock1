@@ -17,13 +17,13 @@
         android:layout_marginEnd="20dp"
         android:layout_toStartOf="@id/imageMore"
         android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
         android:maxLines="1"
         android:paddingStart="5dp"
         android:paddingTop="18dp"
         android:paddingEnd="10dp"
         android:textColor="#263238"
-        android:textSize="18sp"
-        android:fontFamily="sans-serif-medium"/>
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imageActive"
@@ -46,7 +46,7 @@
         android:layout_below="@id/tvName"
         android:layout_alignStart="@id/tvName"
         android:layout_alignEnd="@id/tvName"
-        android:layout_marginTop="13dp"/>
+        android:layout_marginTop="13dp" />
 
     <ImageView
         android:id="@+id/imageMore"
@@ -56,7 +56,7 @@
         android:background="?attr/selectableItemBackground"
         android:paddingStart="20dp"
         android:paddingEnd="25dp"
-        app:srcCompat="@drawable/ic_options"/>
+        app:srcCompat="@drawable/ic_options" />
 
     <View
         android:id="@+id/viewLine"

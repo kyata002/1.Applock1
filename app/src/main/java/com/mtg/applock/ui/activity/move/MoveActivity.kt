@@ -9,6 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
+import com.common.control.interfaces.AdCallback
+import com.common.control.manager.AdmobManager
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.mtg.applock.BuildConfig
 import com.mtg.applock.R
 import com.mtg.applock.model.EncryptorModel
 import com.mtg.applock.model.ItemDetail
@@ -25,6 +29,7 @@ class MoveActivity : BaseActivity<MoveViewModel>() {
     private var mEncryptor: EncryptorModel? = null
     private var mMoveAdapter: MoveAdapter? = null
     private var mType: Int = Const.TYPE_IMAGES
+    private var interAds : InterstitialAd? = null
     private var mMoveList = mutableListOf<ItemDetail>()
     private var mSuccessDialog: AlertDialog? = null
     private var mIsRunning = true
@@ -94,9 +99,28 @@ class MoveActivity : BaseActivity<MoveViewModel>() {
         mSuccessDialog = builder.create()
         mSuccessDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnOkSuccessMove.setOnClickListener {
-            onBackPressed()
+            if(interAds!=null){
+                showInter()
+            }
         }
 
+    }
+    private fun loadInter(){
+        AdmobManager.getInstance().loadInterAds(this,BuildConfig.inter_lock_personal,object :
+            AdCallback() {
+            override fun onResultInterstitialAd(interstitialAd: InterstitialAd?) {
+                super.onResultInterstitialAd(interstitialAd)
+                interAds = interstitialAd
+            }
+        })
+    }
+    private fun showInter(){
+        AdmobManager.getInstance().showInterstitial(this,interAds,object :AdCallback(){
+            override fun onAdClosed() {
+                super.onAdClosed()
+                onBackPressed()
+            }
+        })
     }
 
     private fun getCountWithType(): Int {
@@ -112,6 +136,10 @@ class MoveActivity : BaseActivity<MoveViewModel>() {
         return count
     }
 
+    override fun onResume() {
+        super.onResume()
+        loadInter()
+    }
     override fun onBackPressed() {
         if (mIsRunning) {
             return

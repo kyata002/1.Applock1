@@ -55,7 +55,7 @@ class ConfigurationActivity : BaseActivity<ConfigurationViewModel>(), ConfigAdap
     private var mOverlapPermissionDialog: AlertDialog? = null
     private var mUsageDataAccessPermissionDialog: AlertDialog? = null
     private var mPopupWindow: PopupWindow? = null
-    private var mConfigurationList = mutableListOf<Any>()
+    private var mConfigurationList = mutableListOf<Any?>()
     private lateinit var mAppLockerPreferences: AppLockerPreferences
     private lateinit var mAppLockHelper: AppLockHelper
     private var mConfigurationModelSelected: ConfigurationModel? = null
@@ -89,11 +89,12 @@ class ConfigurationActivity : BaseActivity<ConfigurationViewModel>(), ConfigAdap
         }
         toolbar.setNavigationOnClickListener { onBackPressed() }
 
+
         mConfigAdapter = ConfigAdapter(this, mConfigurationList, this)
         recyclerConfiguration.adapter = mConfigAdapter
         recyclerConfiguration.layoutManager = LinearLayoutManager(this)
         recyclerConfiguration.removeBlink()
-        viewModel.getConfigurationListLiveData().observe(this, {
+        viewModel.getConfigurationListLiveData().observe(this) {
             if (it.isEmpty()) {
                 llEmpty.visible()
                 recyclerConfiguration.gone()
@@ -102,9 +103,13 @@ class ConfigurationActivity : BaseActivity<ConfigurationViewModel>(), ConfigAdap
                 recyclerConfiguration.visible()
                 mConfigurationList.clear()
                 mConfigurationList.addAll(it)
+                try {
+                    mConfigurationList.add(1, null)
+                } catch (e: Exception) {
+                }
                 mConfigAdapter.notifyDataSetChanged()
             }
-        })
+        }
         mAppLockerPreferences = AppLockerPreferences(this)
         mAppLockHelper = AppLockHelper(this)
         buildOverlapPermissionDialog()

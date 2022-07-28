@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
 }
 
 
@@ -25,10 +27,74 @@ android {
         renderscriptSupportModeEnabled true
     }
 
+    flavorDimensions "dimen"
+    productFlavors {
+        vDevelop_ {
+            applicationId "com.example.develop.excelreader.test"
+            buildConfigField "boolean", "TEST_AD", "false"
+            buildConfigField "boolean", "PURCHASED", "false"
+            dimension "dimen"
+            versionName "develop"
+
+
+            def addConstantTo = { target, constantName, constantValue ->
+                target.manifestPlaceholders += [(constantName): constantValue]
+                target.buildConfigField "String", "${constantName}", "\"${constantValue}\""
+            }
+            addConstantTo(owner, "APP_ID", "ca-app-pub-3940256099942544~3347511713")
+
+            addConstantTo(owner, "inter_lock_personal", "ca-app-pub-3940256099942544/8691691433")
+            addConstantTo(owner, "inter_open_personal", "ca-app-pub-3940256099942544/8691691433")
+            addConstantTo(owner, "inter_open_app", "ca-app-pub-3940256099942544/1033173712")
+            addConstantTo(owner, "inter_open_intruder", "ca-app-pub-3940256099942544/1033173712")
+
+            addConstantTo(owner, "native_open_app   ", "ca-app-pub-3940256099942544/2247696110")
+            addConstantTo(owner, "native_grouplock", "ca-app-pub-3940256099942544/2247696110")
+
+
+            addConstantTo(owner, "open_app", "ca-app-pub-3940256099942544/3419835294")
+
+            addConstantTo(owner, "banner_main", "ca-app-pub-3940256099942544/6300978111")
+            addConstantTo(owner, "banner_detailist_personal", "ca-app-pub-3940256099942544/6300978111")
+
+        }
+
+        vOfficial_ {
+            applicationId "com.MTG.AppLock"
+
+            buildConfigField "boolean", "TEST_AD", "false"
+            buildConfigField "boolean", "PURCHASED", "false"
+            dimension "dimen"
+
+            def addConstantTo = { target, constantName, constantValue ->
+                target.manifestPlaceholders += [(constantName): constantValue]
+                target.buildConfigField "String", "${constantName}", "\"${constantValue}\""
+            }
+            addConstantTo(owner, "APP_ID", "ca-app-pub-3940256099942544~3347511713")
+
+            addConstantTo(owner, "inter_splash", "ca-app-pub-3940256099942544/8691691433")
+            addConstantTo(owner, "inter_open_other_app", "ca-app-pub-3940256099942544/1033173712")
+            addConstantTo(owner, "inter_read_file", "ca-app-pub-3940256099942544/1033173712")
+
+            addConstantTo(owner, "native_home", "ca-app-pub-3940256099942544/2247696110")
+            addConstantTo(owner, "native_setting", "ca-app-pub-3940256099942544/2247696110")
+
+            addConstantTo(owner, "open_app", "ca-app-pub-3940256099942544/3419835294")
+
+            addConstantTo(owner, "banner_doc", "ca-app-pub-3940256099942544/6300978111")
+
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -170,4 +236,6 @@ dependencies {
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'com.github.MTGLibs:CommonLibs:1.2.0'
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+
 }

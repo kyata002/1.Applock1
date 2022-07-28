@@ -86,10 +86,18 @@
         android:text="@string/text_add"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fakeAds"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.7"/>
+
+    <FrameLayout
+        android:id="@+id/fakeAds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <include layout="@layout/layout_banner_control"/>
+    </FrameLayout>
 
     <RelativeLayout
         android:id="@+id/rlLoading"

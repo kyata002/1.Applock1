@@ -71,15 +71,7 @@
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreenTheme" />
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:autoRemoveFromRecents="true"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:excludeFromRecents="true"
-            android:finishOnCloseSystemDialogs="true"
-            android:launchMode="singleTop"
-            android:noHistory="true"
-            android:theme="@android:style/Theme.Translucent" />
+
         <activity
             android:name="com.mtg.applock.ui.activity.first.FirstAllActivity"
             android:autoRemoveFromRecents="true"
@@ -243,7 +235,7 @@
         <meta-data
             tools:replace="android:value"
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/mobile_ad_id" />
+            android:value="${APP_ID}" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

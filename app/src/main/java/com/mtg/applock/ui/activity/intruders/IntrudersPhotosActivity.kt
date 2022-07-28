@@ -17,6 +17,9 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import androidx.appcompat.app.AlertDialog
+import com.common.control.interfaces.AdCallback
+import com.common.control.manager.AdmobManager
+import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.mtg.applock.R
 import com.mtg.applock.data.sqllite.model.IntruderPhoto
 import com.mtg.applock.ui.activity.intruders.detail.IntrudersPhotosDetailActivity
@@ -29,6 +32,8 @@ import com.mtg.applock.util.file.EncryptionFileManager
 import com.mtg.applock.util.sharerate.ShareUtils
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
+import com.mtg.applock.BuildConfig
+import com.mtg.applock.ui.activity.main.MainActivity
 import es.MTG.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_intruders_photos.*
 import kotlinx.android.synthetic.main.activity_intruders_photos.toolbar
@@ -44,6 +49,7 @@ class IntrudersPhotosActivity : BaseActivity<IntrudersPhotosViewModel>() {
     private lateinit var mIntruderAdapter: IntruderAdapter
     private var mIntruderList = mutableListOf<IntrudersPhotoItemViewState>()
     private var mPopupWindow: PopupWindow? = null
+    private var interAds : InterstitialAd? = null
     private var mIntrudersPhotoItemViewState: IntrudersPhotoItemViewState? = null
 
     override fun getViewModel(): Class<IntrudersPhotosViewModel> = IntrudersPhotosViewModel::class.java
@@ -63,6 +69,10 @@ class IntrudersPhotosActivity : BaseActivity<IntrudersPhotosViewModel>() {
             override fun openIntrudersPhotosListener(mIntrudersPhotoItemViewState: IntrudersPhotoItemViewState) {
                 val intent = IntrudersPhotosDetailActivity.newIntent(this@IntrudersPhotosActivity)
                 intent.putExtra(Const.EXTRA_DATA, mIntrudersPhotoItemViewState)
+                MainActivity.check_click_intruder += 1
+                if(MainActivity.check_click_intruder % 2==0){
+                    showInter()
+                }
                 startActivityForResult(intent, Const.REQUEST_CODE_GO_TO_DETAIL_INTRUDER)
             }
 
@@ -295,6 +305,26 @@ class IntrudersPhotosActivity : BaseActivity<IntrudersPhotosViewModel>() {
 
     override fun onResume() {
         super.onResume()
+        loadInter()
+    }
+
+    private fun loadInter() {
+        AdmobManager.getInstance().loadInterAds(this, BuildConfig.inter_open_intruder,object :
+            AdCallback() {
+            override fun onResultInterstitialAd(interstitialAd: InterstitialAd?) {
+                super.onResultInterstitialAd(interstitialAd)
+                interAds = interstitialAd
+            }
+        })
+    }
+
+    private fun showInter(){
+        AdmobManager.getInstance().showInterstitial(this,interAds,object :AdCallback(){
+//            override fun onAdClosed() {
+//                super.onAdClosed()
+//                onBackPressed()
+//            }
+        })
     }
 
     override fun onPause() {

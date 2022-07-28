@@ -17,17 +17,16 @@ import com.mtg.applock.util.extensions.visible
 import com.mtg.library.customview.TagImageView
 import kotlinx.android.synthetic.main.item_configuration.view.*
 
-class ConfigAdapter(mContext: Context, private val mConfigurationModelList: MutableList<Any>, private val mOnSelectedConfigListener: OnSelectedConfigListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ConfigAdapter(mContext: Context, private val mConfigurationModelList: MutableList<Any?>, private val mOnSelectedConfigListener: OnSelectedConfigListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val mLayoutInflater: LayoutInflater = LayoutInflater.from(mContext)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view: View
         return when (viewType) {
-
-            VIEW_ITEM -> {
-                view = mLayoutInflater.inflate(R.layout.item_configuration, parent, false)
-                ConfigHolder(view)
+            VIEW_ADS -> {
+                view = mLayoutInflater.inflate(R.layout.item_native_ads, parent, false)
+                AdsHolder(view)
             }
-            else -> {
+            else ->{
                 view = mLayoutInflater.inflate(R.layout.item_configuration, parent, false)
                 ConfigHolder(view)
             }
@@ -70,6 +69,9 @@ class ConfigAdapter(mContext: Context, private val mConfigurationModelList: Muta
     }
 
     override fun getItemViewType(position: Int): Int {
+        if(mConfigurationModelList.get(position)==null){
+            return VIEW_ADS
+        }else
         return VIEW_ITEM
     }
 

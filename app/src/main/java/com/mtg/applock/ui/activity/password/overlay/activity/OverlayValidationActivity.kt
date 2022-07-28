@@ -44,7 +44,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.common.control.interfaces.AdCallback
+import com.common.control.manager.AdmobManager
 import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.mtg.fingerprint.FingerprintIdentify
 import com.mtg.fingerprint.base.BaseFingerprint
 import com.mtg.pinlock.PinLockConfiguration
@@ -55,6 +58,7 @@ import es.MTG.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_overlay_validation.*
 import kotlinx.android.synthetic.main.dialog_failed.view.*
 import kotlinx.android.synthetic.main.dialog_forgot_password.view.*
+import kotlinx.android.synthetic.main.layout_view_pattern_overlay.view.*
 import java.io.File
 
 open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValidationViewModel>() {
@@ -65,6 +69,7 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
     private lateinit var mFingerprintIdentify: FingerprintIdentify
     private var mIsChangePassword: Boolean = false
     private var mBannerAd: AdView? = null
+    private var interAds: InterstitialAd? = null
     private var mTakePicture: Boolean = false
     private var mHandler: Handler? = null
     private var mHandlerExtend: Handler? = null
@@ -72,13 +77,15 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
     private var mTime: Long = 0L
     var mClassName: String = ""
 
-    override fun getViewModel(): Class<OverlayValidationViewModel> = OverlayValidationViewModel::class.java
+    override fun getViewModel(): Class<OverlayValidationViewModel> =
+        OverlayValidationViewModel::class.java
 
     override fun getLayoutId(): Int {
         return R.layout.activity_overlay_validation
     }
 
     override fun initViews() {
+        loadNav()
         mIsChangePassword = intent.getBooleanExtra(Const.EXTRA_CHANGE_PASSWORD, false)
         mFingerprintIdentify = FingerprintIdentify(this)
         mFingerprintIdentify.setSupportAndroidL(true)
@@ -142,23 +149,24 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                         }
                     }
                 }
-                if (theme.backgroundResId != 0) {
-                    imageBackground.setImageResource(theme.backgroundResId)
-                    pinLock.setImageResourcePinLock(theme.backgroundResId)
-                } else {
-                    val drawable = Drawable.createFromPath(theme.backgroundDownload)
-                    if (drawable == null) {
-                        imageBackground.setImageResource(R.drawable.background_theme_default)
-                        pinLock.setImageResourcePinLock(R.drawable.background_theme_default)
-                    } else {
-                        //                        imageBackground.setImageDrawable(drawable)
-                        pinLock.setImageDrawablePinLock(drawable)
-                        Glide.with(this).load(drawable).apply(
-                            RequestOptions().downsample(DownsampleStrategy.CENTER_INSIDE)
-                                .skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
-                        ).into(imageBackground)
-                    }
-                }
+//                if (theme.backgroundResId != 0) {
+////                    imageBackground.setImageResource(theme.backgroundResId)
+//                    pinLock.setImageResourcePinLock(theme.backgroundResId)
+//                } else {
+//                    val drawable = Drawable.createFromPath(theme.backgroundDownload)
+//                    if (drawable == null) {
+////                        imageBackground.setImageResource(R.drawable.background_theme_default)
+//                        pinLock.setImageResourcePinLock(R.drawable.background_theme_default)
+//                    } else {
+//                        //                        imageBackground.setImageDrawable(drawable)
+//                        pinLock.setImageDrawablePinLock(drawable)
+//                        Glide.with(this).load(drawable).apply(
+//                            RequestOptions().downsample(DownsampleStrategy.CENTER_INSIDE)
+//                                .skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE)
+//                        )
+////                            .into(imageBackground)
+//                    }
+//                }
                 if (theme.selectedResId != 0) {
                     patternLockView.setBitmapSelected(
                         AppCompatResources.getDrawable(
@@ -276,7 +284,11 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                     intruderPhoto()
                 }
                 vibrate(this@OverlayValidationActivity, viewModel.isVibrate())
-                Toasty.showToast(this@OverlayValidationActivity, R.string.msg_pin_lock_error_login, Toasty.ERROR)
+                Toasty.showToast(
+                    this@OverlayValidationActivity,
+                    R.string.msg_pin_lock_error_login,
+                    Toasty.ERROR
+                )
                 pinLock.setInputEnabled(false)
                 if (System.currentTimeMillis() - mTime < Const.TIME_DELAY) {
                     return
@@ -368,6 +380,7 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
             val intent = MainActivity.newIntent(this)
             startActivity(intent)
             finish()
+            showInter()
         }
     }
 
@@ -381,7 +394,11 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                 viewModel.addNumberFingerprintFailed()
                 vibrate(this@OverlayValidationActivity, viewModel.isVibrate())
                 intruderPhotoFingerprint()
-                Toasty.showToast(this@OverlayValidationActivity, R.string.msg_fingerprint_no_match, Toasty.ERROR)
+                Toasty.showToast(
+                    this@OverlayValidationActivity,
+                    R.string.msg_fingerprint_no_match,
+                    Toasty.ERROR
+                )
             }
 
             override fun onFailed(isDeviceLocked: Boolean) {
@@ -389,23 +406,39 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                     // lock
                     fingerPattern.gone()
                     pinLock.showFingerprint(false)
-                    Toasty.showToast(this@OverlayValidationActivity, R.string.msg_failed_more_fingerprint, Toasty.ERROR)
+                    Toasty.showToast(
+                        this@OverlayValidationActivity,
+                        R.string.msg_failed_more_fingerprint,
+                        Toasty.ERROR
+                    )
                 } else {
                     viewModel.addNumberFingerprintFailed()
                     vibrate(this@OverlayValidationActivity, viewModel.isVibrate())
                     intruderPhotoFingerprint()
-                    Toasty.showToast(this@OverlayValidationActivity, R.string.msg_fingerprint_no_match, Toasty.ERROR)
+                    Toasty.showToast(
+                        this@OverlayValidationActivity,
+                        R.string.msg_fingerprint_no_match,
+                        Toasty.ERROR
+                    )
                 }
             }
 
             override fun onLockFingerprint() {
                 fingerPattern.gone()
                 pinLock.showFingerprint(false)
-                Toasty.showToast(this@OverlayValidationActivity, R.string.msg_warning_fingerprint_lock, Toasty.ERROR)
+                Toasty.showToast(
+                    this@OverlayValidationActivity,
+                    R.string.msg_warning_fingerprint_lock,
+                    Toasty.ERROR
+                )
             }
 
             override fun onStartFailedByDeviceLocked() {
-                Toasty.showToast(this@OverlayValidationActivity, R.string.msg_failed_more_fingerprint, Toasty.ERROR)
+                Toasty.showToast(
+                    this@OverlayValidationActivity,
+                    R.string.msg_failed_more_fingerprint,
+                    Toasty.ERROR
+                )
                 fingerPattern.gone()
                 pinLock.showFingerprint(false)
             }
@@ -414,7 +447,8 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
 
     private fun showForgotPasswordDialog() {
         val builder = AlertDialog.Builder(this)
-        val view: View = LayoutInflater.from(this).inflate(R.layout.dialog_forgot_password, null, false)
+        val view: View =
+            LayoutInflater.from(this).inflate(R.layout.dialog_forgot_password, null, false)
         builder.setView(view)
         view.btnNoForgotPassword.setOnClickListener { mForgotPasswordDialog?.dismiss() }
         view.btnOkForgotPassword.setOnClickListener {
@@ -441,7 +475,11 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
         builder.setView(view)
         view.btnOkFailedMorePassword.setOnClickListener {
             mFailedMorePasswordDialog?.dismiss()
-            if (TextUtils.isEmpty(mPackageName) || TextUtils.equals(mPackageName, Const.SETTINGS_PACKAGE) || TextUtils.equals(mPackageName, BuildConfig.APPLICATION_ID)) {
+            if (TextUtils.isEmpty(mPackageName) || TextUtils.equals(
+                    mPackageName,
+                    Const.SETTINGS_PACKAGE
+                ) || TextUtils.equals(mPackageName, BuildConfig.APPLICATION_ID)
+            ) {
                 onBackPressed()
             }
         }
@@ -485,9 +523,18 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
 
     private fun startCamera() {
         // setup camera config
-        mCameraConfig = CameraConfig().getBuilder(this).setCameraFacing(CameraFacing.FRONT_FACING_CAMERA).setCameraResolution(CameraResolution.HIGH_RESOLUTION).setImageFormat(CameraImageFormat.FORMAT_JPEG).setImageRotation(CameraRotation.ROTATION_270).setCameraFocus(CameraFocus.AUTO).build()
+        mCameraConfig =
+            CameraConfig().getBuilder(this).setCameraFacing(CameraFacing.FRONT_FACING_CAMERA)
+                .setCameraResolution(CameraResolution.HIGH_RESOLUTION)
+                .setImageFormat(CameraImageFormat.FORMAT_JPEG)
+                .setImageRotation(CameraRotation.ROTATION_270).setCameraFocus(CameraFocus.AUTO)
+                .build()
         //Check for the camera permission for the runtime
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
             //Start camera preview
             startCamera(mCameraConfig)
         }
@@ -515,7 +562,31 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
 
     override fun onResume() {
         super.onResume()
+        loadInter()
         mBannerAd?.resume()
+    }
+    private fun loadNav(){
+        AdmobManager.getInstance().loadNative(this, BuildConfig.native_open_app, frAds,R.layout.custom_native_media)
+    }
+
+    private fun showInter() {
+        AdmobManager.getInstance().showInterstitial(this, interAds, object : AdCallback() {
+//            override fun onAdClosed() {
+//                super.onAdClosed()
+//                onBackPressed()
+//            }
+        })
+    }
+
+    private fun loadInter() {
+        AdmobManager.getInstance()
+            .loadInterAds(this, com.mtg.applock.BuildConfig.inter_open_app, object :
+                AdCallback() {
+                override fun onResultInterstitialAd(interstitialAd: InterstitialAd?) {
+                    super.onResultInterstitialAd(interstitialAd)
+                    interAds = interstitialAd
+                }
+            })
     }
 
     override fun onDestroy() {

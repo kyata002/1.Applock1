@@ -13,7 +13,11 @@ import android.os.SystemClock
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.common.control.dialog.RateAppDialog
+import com.common.control.interfaces.RateCallback
+import com.common.control.utils.RatePrefUtils
 import com.mtg.applock.R
 import com.mtg.applock.permissions.IntentHelper
 import com.mtg.applock.permissions.PermissionChecker
@@ -25,6 +29,7 @@ import com.mtg.applock.ui.activity.password.overlay.activity.OverlayValidationAc
 import com.mtg.applock.ui.activity.policy.PolicyActivity
 import com.mtg.applock.ui.base.BaseActivity
 import com.mtg.applock.ui.base.BusMessage
+import com.mtg.applock.util.CommonUtils
 import com.mtg.applock.util.Const
 import com.mtg.applock.util.EventBusUtils
 import com.mtg.applock.util.extensions.dialogLayout
@@ -248,13 +253,39 @@ class SettingsActivity : BaseActivity<SettingsViewModel>() {
             startActivity(PolicyActivity.newIntent(this))
         }
         clSettingsRateApplication.setOnClickListener {
-            viewModel.setReload(false)
-            try {
-                startActivity(IntentHelper.getRateAppIntent())
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
+//            com.common.control.utils.CommonUtils.getInstance().rateApp( this)
+            showRate(true)
         }
+    }
+
+    fun Context.showRate(isFinish: Boolean) {
+        val dialog = RateAppDialog(this)
+        dialog.setCallback(object : RateCallback {
+            override fun onMaybeLater() {
+                if (isFinish) {
+                    RatePrefUtils.increaseCountRate(this@showRate)
+                    (this@showRate as Activity).finish()
+                }
+            }
+
+            override fun onSubmit(review: String) {
+                Toast.makeText(
+                    this@showRate,
+                    "Thank you for reviewing...",
+                    Toast.LENGTH_SHORT
+                ).show()
+                RatePrefUtils.setRated(this@showRate)
+                if (isFinish) {
+                    (this@showRate as Activity).finish()
+                }
+            }
+
+            override fun onRate() {
+                com.common.control.utils.CommonUtils.getInstance().rateApp(this@showRate)
+                RatePrefUtils.setRated(this@showRate)
+            }
+        })
+        dialog.show()
     }
 
     private fun isFingerprintChecked(): Boolean {

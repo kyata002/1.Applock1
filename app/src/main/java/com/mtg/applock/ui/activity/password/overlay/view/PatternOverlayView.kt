@@ -36,6 +36,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.common.control.manager.AdmobManager
+import com.mtg.applock.BuildConfig
 import com.mtg.pinlock.PinLockConfiguration
 import com.mtg.pinlock.PinLockViewV2
 import com.mtg.pinlock.control.OnLockScreenLoginListener
@@ -43,13 +45,18 @@ import com.mtg.pinlock.extension.decodeBase64
 import es.MTG.toasty.Toasty
 import kotlinx.android.synthetic.main.layout_view_pattern_overlay.view.*
 import java.io.File
-import com.mtg.applock.R 
+import com.mtg.applock.R
 
-class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr), CameraCallbacks {
+class PatternOverlayView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : LinearLayout(context, attrs, defStyleAttr), CameraCallbacks {
     private val appLockerPreferences = AppLockerPreferences(context)
     private val appLockHelper = AppLockHelper(context)
     private var onPatternCompleted: ((List<PatternLockView.Dot>) -> Unit)? = null
-    private var mOnLockScreenLoginCompactListenerV2: PinLockViewV2.OnLockScreenLoginCompactListener? = null
+    private var mOnLockScreenLoginCompactListenerV2: PinLockViewV2.OnLockScreenLoginCompactListener? =
+        null
     private var mOnShowForgotPasswordListener: OnShowForgotPasswordListener? = null
     private var mOnFingerprintListener: OnFingerprintListener? = null
     private var mOnFingerprintClick: PinLockViewV2.OnFingerprintClick? = null
@@ -58,7 +65,8 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
     private var mCameraPreview: CameraPreview? = null
     private var mCachedCameraConfig: CameraConfig? = null
     private var mCameraConfig: CameraConfig? = null
-    private var mRootView: View = LayoutInflater.from(context).inflate(R.layout.layout_view_pattern_overlay, this, true)
+    private var mRootView: View =
+        LayoutInflater.from(context).inflate(R.layout.layout_view_pattern_overlay, this, true)
 
     private var mTakePicture: Boolean = false
     private var mHandler: Handler? = null
@@ -254,20 +262,32 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
                 } else {
 //                    imageBackground.setImageDrawable(drawable)
                     pinLock.setImageDrawablePinLock(drawable)
-                    Glide.with(this).load(drawable).apply(RequestOptions()
+                    Glide.with(this).load(drawable).apply(
+                        RequestOptions()
                             .downsample(DownsampleStrategy.CENTER_INSIDE)
                             .skipMemoryCache(true)
-                            .diskCacheStrategy(DiskCacheStrategy.NONE))
-                            .into(imageBackground)
+                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    )
+                        .into(imageBackground)
                 }
             }
             if (theme.selectedResId != 0) {
-                patternLockView.setBitmapSelected(AppCompatResources.getDrawable(context, theme.selectedResId)?.toBitmap())
+                patternLockView.setBitmapSelected(
+                    AppCompatResources.getDrawable(
+                        context,
+                        theme.selectedResId
+                    )?.toBitmap()
+                )
             } else {
                 patternLockView.setBitmapSelected(BitmapFactory.decodeFile(theme.selectedDownload))
             }
             if (theme.unselectedResId != 0) {
-                patternLockView.setBitmapUnSelected(AppCompatResources.getDrawable(context, theme.unselectedResId)?.toBitmap())
+                patternLockView.setBitmapUnSelected(
+                    AppCompatResources.getDrawable(
+                        context,
+                        theme.unselectedResId
+                    )?.toBitmap()
+                )
             } else {
                 patternLockView.setBitmapUnSelected(BitmapFactory.decodeFile(theme.unselectedDownload))
             }
@@ -275,21 +295,25 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
             val bitmapSelectedList = mutableListOf<Bitmap>()
             if (theme.selectedResIdList.isNotEmpty()) {
                 theme.selectedResIdList.forEach {
-                    AppCompatResources.getDrawable(context, it)?.toBitmap()?.let { it1 -> bitmapSelectedList.add(it1) }
+                    AppCompatResources.getDrawable(context, it)?.toBitmap()
+                        ?.let { it1 -> bitmapSelectedList.add(it1) }
                 }
             }
             patternLockView.setBitmapSelectedList(bitmapSelectedList)
             val bitmapUnselectedList = mutableListOf<Bitmap>()
             if (theme.unselectedResIdList.isNotEmpty()) {
                 theme.unselectedResIdList.forEach {
-                    AppCompatResources.getDrawable(context, it)?.toBitmap()?.let { it1 -> bitmapUnselectedList.add(it1) }
+                    AppCompatResources.getDrawable(context, it)?.toBitmap()
+                        ?.let { it1 -> bitmapUnselectedList.add(it1) }
                 }
             }
             patternLockView.setBitmapUnSelectedList(bitmapUnselectedList)
             //
             if (theme.lineColorResId != 0) {
-                patternLockView.correctStateColor = ContextCompat.getColor(context, theme.lineColorResId)
-                patternLockView.normalStateColor = ContextCompat.getColor(context, theme.lineColorResId)
+                patternLockView.correctStateColor =
+                    ContextCompat.getColor(context, theme.lineColorResId)
+                patternLockView.normalStateColor =
+                    ContextCompat.getColor(context, theme.lineColorResId)
             } else {
                 try {
                     patternLockView.correctStateColor = Color.parseColor(theme.lineColor)
@@ -299,19 +323,19 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
                 }
             }
             val builder = PinLockConfiguration.Builder()
-                    .setMode(PinLockConfiguration.Config.MODE_AUTH)
-                    .setDeletePadding(theme.isDeletePadding)
-                    .setNumberPadding(theme.isNumberPadding)
-                    .setDeletePadding(theme.deletePadding)
-                    .setResPinList(theme.buttonResList)
-                    .setPinUrlList(theme.buttonDownloadList())
-                    .setResColorButton(theme.colorButtonResId)
-                    .setResSelectorCheckbox(theme.selectorCheckboxColorResId)
-                    .setColorCheckbox(theme.selectorCheckboxColor)
-                    .setResBackgroundId(theme.backgroundResId)
-                    .setBackgroundUrl(theme.backgroundDownload)
-                    .setResColorMessage(theme.textMsgColorResId).setColorMessage(theme.textMsgColor)
-                    .setNextTitle(context.getString(R.string.text_create))
+                .setMode(PinLockConfiguration.Config.MODE_AUTH)
+                .setDeletePadding(theme.isDeletePadding)
+                .setNumberPadding(theme.isNumberPadding)
+                .setDeletePadding(theme.deletePadding)
+                .setResPinList(theme.buttonResList)
+                .setPinUrlList(theme.buttonDownloadList())
+                .setResColorButton(theme.colorButtonResId)
+                .setResSelectorCheckbox(theme.selectorCheckboxColorResId)
+                .setColorCheckbox(theme.selectorCheckboxColor)
+                .setResBackgroundId(theme.backgroundResId)
+                .setBackgroundUrl(theme.backgroundDownload)
+                .setResColorMessage(theme.textMsgColorResId).setColorMessage(theme.textMsgColor)
+                .setNextTitle(context.getString(R.string.text_create))
             builder.setCodeLength(appLockerPreferences.getPinLock().decodeBase64().length)
             pinLock.applyConfiguration(builder.build())
         }
@@ -358,13 +382,18 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
     private fun startCamera() {
         try {
             // setup camera config
-            mCameraConfig = CameraConfig().getBuilder(context).setCameraFacing(CameraFacing.FRONT_FACING_CAMERA)
+            mCameraConfig =
+                CameraConfig().getBuilder(context).setCameraFacing(CameraFacing.FRONT_FACING_CAMERA)
                     .setCameraResolution(CameraResolution.HIGH_RESOLUTION)
                     .setImageFormat(CameraImageFormat.FORMAT_JPEG)
                     .setImageRotation(CameraRotation.ROTATION_270).setCameraFocus(CameraFocus.AUTO)
                     .build()
             //Check for the camera permission for the runtime
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(
+                    context,
+                    Manifest.permission.CAMERA
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
                 //Start camera preview
                 mCameraConfig?.let { startCamera(it) }
             }
@@ -381,9 +410,16 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
      */
     @RequiresPermission(Manifest.permission.CAMERA)
     protected open fun startCamera(cameraConfig: CameraConfig) {
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) { //check if the camera permission is available
+        if (ActivityCompat.checkSelfPermission(
+                context,
+                Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) { //check if the camera permission is available
             onCameraError(CameraError.ERROR_CAMERA_PERMISSION_NOT_AVAILABLE)
-        } else if (cameraConfig.facing == CameraFacing.FRONT_FACING_CAMERA && !HiddenCameraUtils.isFrontCameraAvailable(context)) {   //Check if for the front camera
+        } else if (cameraConfig.facing == CameraFacing.FRONT_FACING_CAMERA && !HiddenCameraUtils.isFrontCameraAvailable(
+                context
+            )
+        ) {   //Check if for the front camera
             onCameraError(CameraError.ERROR_DOES_NOT_HAVE_FRONT_CAMERA)
         } else {
             mCachedCameraConfig = cameraConfig
@@ -396,7 +432,11 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
      * initialize the camera using [.startCamera] before using this function.
      */
     fun takePicture(fileSave: File, time: String) {
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(
+                context,
+                Manifest.permission.CAMERA
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             return
         }
         if (mCameraPreview != null) {
@@ -430,7 +470,10 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
     open fun addPreView(): CameraPreview? {
         //create fake camera view
         val cameraSourceCameraPreview = CameraPreview(context, this)
-        cameraSourceCameraPreview.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        cameraSourceCameraPreview.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
         when (val view = (mRootView as ViewGroup).getChildAt(0)) {
             is LinearLayout -> {
                 val params = LinearLayout.LayoutParams(1, 1)
@@ -477,10 +520,21 @@ class PatternOverlayView @JvmOverloads constructor(context: Context, attrs: Attr
     }
 
     override fun onImageCapture(imageFile: File, time: String) {
-        AppLockHelper(context).addIntruder(IntruderPhoto(0, mAppPackageName, imageFile.absolutePath, time))
+        AppLockHelper(context).addIntruder(
+            IntruderPhoto(
+                0,
+                mAppPackageName,
+                imageFile.absolutePath,
+                time
+            )
+        )
         mTakePicture = false
         pinLock.setInputEnabled(true)
         patternLockView.isInputEnabled = true
+    }
+
+    fun loadNative() {
+        AdmobManager.getInstance().loadNative(context, BuildConfig.native_open_app, frAds,R.layout.custom_native_media)
     }
 
     interface OnShowForgotPasswordListener {

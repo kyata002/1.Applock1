@@ -1,5 +1,6 @@
 package com.mtg.applock.util
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Environment
 import android.provider.MediaStore
@@ -21,6 +22,7 @@ object LoadDataUtils {
 
     // image
     object Image {
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun findImageAlbums(context: Context): MutableList<Album> {
             val folderMap: HashMap<Int, Album> = HashMap()
@@ -50,6 +52,7 @@ object LoadDataUtils {
             return ArrayList(folderMap.values)
         }
 
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun loadFullImage(context: Context): MutableList<ItemDetail> {
             val itemDetailList = mutableListOf<ItemDetail>()
@@ -68,6 +71,7 @@ object LoadDataUtils {
             return itemDetailList
         }
 
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun findImageAlbumsSub(context: Context): MutableList<Album> {
             val folderMap: HashMap<Int, Album> = HashMap()
@@ -97,6 +101,7 @@ object LoadDataUtils {
             return ArrayList(folderMap.values)
         }
 
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun loadFullImageSub(context: Context): MutableList<ItemDetail> {
             val itemDetailList = mutableListOf<ItemDetail>()
@@ -129,6 +134,7 @@ object LoadDataUtils {
     }
 
     object Video {
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun findVideoAlbums(context: Context): MutableList<Album> {
             val folderMap: HashMap<Int, Album> = HashMap()
@@ -158,6 +164,7 @@ object LoadDataUtils {
             return ArrayList(folderMap.values)
         }
 
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun loadFullVideo(context: Context): MutableList<ItemDetail> {
             val itemDetailList = mutableListOf<ItemDetail>()
@@ -183,6 +190,7 @@ object LoadDataUtils {
     }
 
     object Audio {
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun findAudioAlbums(context: Context): MutableList<Album> {
             val folderMap: HashMap<Int, Album> = HashMap()
@@ -196,7 +204,7 @@ object LoadDataUtils {
                         if (pathThumbnail.startsWith(getExternalAbsolutePath()) && File(pathThumbnail).length().toDouble() != 0.0 && MediaHelper.isSupportAudio(pathThumbnail)) {
                             albumName = albumName ?: "No Folder"
                             if (!folderMap.containsKey(parentId)) {
-                                val album = Album(name = albumName, path = parentPath, resIdThumbnail = R.drawable.ic_music_default, number = 1, type = Const.TYPE_AUDIOS)
+                                val album = Album(name = albumName, path = parentPath, resIdThumbnail = R.drawable.ic_avatar_audio, number = 1, type = Const.TYPE_AUDIOS)
                                 folderMap[parentId] = album
                             } else {
                                 val album = folderMap[parentId]
@@ -212,6 +220,7 @@ object LoadDataUtils {
             return ArrayList(folderMap.values)
         }
 
+        @SuppressLint("Range")
         @Suppress("DEPRECATION")
         fun loadFullAudio(context: Context): MutableList<ItemDetail> {
             val itemDetailList = mutableListOf<ItemDetail>()
@@ -222,7 +231,7 @@ object LoadDataUtils {
                         if (pathThumbnail.startsWith(getExternalAbsolutePath()) && File(pathThumbnail).length().toDouble() != 0.0 && MediaHelper.isSupportAudio(pathThumbnail)) {
                             try {
                                 val duration = cursor.getString(cursor.getColumnIndex(DURATION))
-                                val image = ItemDetail(name = File(pathThumbnail).name, path = pathThumbnail, tvSize = DateUtils.formatElapsedTime(duration.toLong() / 1000), resIdThumbnail = R.drawable.ic_music_default, type = Const.TYPE_AUDIOS)
+                                val image = ItemDetail(name = File(pathThumbnail).name, path = pathThumbnail, tvSize = DateUtils.formatElapsedTime(duration.toLong() / 1000), resIdThumbnail = R.drawable.ic_avatar_audio, type = Const.TYPE_AUDIOS)
 
                                 itemDetailList.add(image)
                             } catch (e: Exception) {

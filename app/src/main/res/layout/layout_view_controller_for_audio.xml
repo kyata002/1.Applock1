@@ -19,7 +19,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_avatar_song"/>
+            app:srcCompat="@drawable/ic_avatar_audio"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -78,7 +78,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/barrier"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/selector_ic_audio_prev"/>
+            app:srcCompat="@drawable/ic_previous"/>
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrier"
@@ -96,7 +96,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/exo_next"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_audio_pause"/>
+            app:srcCompat="@drawable/ic_pause"/>
 
         <ImageView
             android:id="@+id/exo_play"
@@ -107,7 +107,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/exo_next"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_audio_play"/>
+            app:srcCompat="@drawable/ic_play"/>
 
         <ImageView
             android:id="@+id/exo_next"
@@ -119,6 +119,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_audio_next"/>
+            app:srcCompat="@drawable/ic_next"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.appbar.AppBarLayout>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_theme_default"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,20 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageBackground"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/background_theme_default"/>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineTop"
-            android:layout_width="wrap_content"
+
+        <FrameLayout
+            android:id="@+id/frAds"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.12"/>
+            app:layout_constraintTop_toTopOf="parent">
+            <include layout="@layout/load_fb_native" />
+            <include layout="@layout/custom_native_media" />
+        </FrameLayout>
 
         <ImageView
             android:id="@+id/avatarLock"
@@ -31,12 +29,13 @@
             android:layout_marginTop="56dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guidelineTop"/>
+            app:layout_constraintTop_toBottomOf="@id/frAds"/>
 
         <TextView
             android:id="@+id/fingerPattern"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginTop="16dp"
             android:padding="8dp"
             android:textColor="@color/colorWhite"
@@ -52,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:visibility="gone"
             android:layout_marginEnd="20dp"
             android:gravity="center"
             android:text="@string/pattern_draw_your_unlock_current_pattern"
@@ -106,6 +106,7 @@
 
     <com.mtg.pinlock.PinLockViewV2
         android:id="@+id/pinLock"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
@@ -117,6 +118,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:visibility="gone"
         android:gravity="center"
         android:text="@string/msg_pin_lock_current_password"
         android:textColor="@android:color/white"
@@ -128,7 +130,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_end="512dp" />
 
     <FrameLayout
         android:id="@+id/flAds"

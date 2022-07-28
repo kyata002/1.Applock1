@@ -19,6 +19,7 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
@@ -40,6 +41,11 @@ import com.mtg.applock.util.alarms.AlarmsUtils
 import com.mtg.applock.util.extensions.dialogLayout
 import com.mtg.applock.util.preferences.AppLockerPreferences
 import com.bumptech.glide.Glide
+import com.common.control.dialog.RateAppDialog
+import com.common.control.interfaces.RateCallback
+import com.common.control.manager.AdmobManager
+import com.common.control.manager.AppOpenManager
+import com.common.control.utils.RatePrefUtils
 //import com.common.control.dialog.RateAppDialog
 //import com.common.control.interfaces.RateCallback
 import com.google.android.gms.ads.nativead.NativeAd
@@ -53,6 +59,7 @@ import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
+import com.mtg.applock.BuildConfig
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_intruder_photo.view.*
 import kotlinx.android.synthetic.main.dialog_not_enough_storage.view.*
@@ -63,7 +70,9 @@ import kotlinx.android.synthetic.main.dialog_supper_password.view.*
 import kotlinx.android.synthetic.main.dialog_warning_close_app.view.*
 
 
-class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWritePermissionsListener, OnMainListener, InstallStateUpdatedListener {
+class MainActivity : BaseActivity<MainViewModel>(),
+    PersonalFragment.OnRequestWritePermissionsListener, OnMainListener,
+    InstallStateUpdatedListener {
     val MY_REQUEST_CODE = 123;
     private var mIntruderPhotoDialog: AlertDialog? = null
     private var mStoragePermissionDialog: AlertDialog? = null
@@ -80,7 +89,6 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
     private var mProgressBar: Dialog? = null
 
     private lateinit var appUpdateManager: AppUpdateManager
-
 
 
     private var mRemoveReceiver = object : BroadcastReceiver() {
@@ -116,8 +124,10 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
 
     override fun initViews() {
 
+        check_click_intruder=0
         setSupportActionBar(toolbar);
 
+        AdmobManager.getInstance().loadBanner(this,BuildConfig.banner_main)
         if (intent.getBooleanExtra(Const.IS_FROM_FIRST_ALL, false)) {
             showProgressBar()
             ApplicationListUtils.instance?.reload(this)
@@ -135,7 +145,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         })
         if (!CommonUtils.isCanSaveFile(this, 0) && viewModel.getIntrudersCatcherEnabled()) {
             val builder = AlertDialog.Builder(this)
-            val view: View = LayoutInflater.from(this).inflate(R.layout.dialog_not_enough_storage, null, false)
+            val view: View =
+                LayoutInflater.from(this).inflate(R.layout.dialog_not_enough_storage, null, false)
             view.tvMessageNotEnoughStorage.setText(R.string.msg_not_enough_memory_intruder)
             view.btnYesNotEnoughStorage.setOnClickListener {
                 mIntruderPhotoDialog?.dismiss()
@@ -159,7 +170,10 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
                     if (!isStoragePermissionGranted()) {
                         showStoragePermissionDialog()
                     } else {
-                        (viewPager.adapter?.instantiateItem(viewPager, MainPagerAdapter.INDEX_PERSONAL) as PersonalFragment).setupNumberTypeIfChange()
+                        (viewPager.adapter?.instantiateItem(
+                            viewPager,
+                            MainPagerAdapter.INDEX_PERSONAL
+                        ) as PersonalFragment).setupNumberTypeIfChange()
                     }
                 } else if (position == MainPagerAdapter.INDEX_LOCKED) {
                     showDialogOverlapOrUsageDataAccessPermission()
@@ -192,7 +206,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
                     appUpdateInfo,
                     AppUpdateType.FLEXIBLE,
                     this,
-                    MY_REQUEST_CODE)
+                    MY_REQUEST_CODE
+                )
 
             }
         }
@@ -201,15 +216,15 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.home_screen_menu,menu)
+        menuInflater.inflate(R.menu.home_screen_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId==R.id.group_lock){
+        if (item.itemId == R.id.group_lock) {
             startActivity(ConfigurationActivity.newIntent(this))
         }
-        if(item.itemId==R.id.settings){
+        if (item.itemId == R.id.settings) {
             startActivity(SettingsActivity.newIntent(this))
         }
         return super.onOptionsItemSelected(item)
@@ -217,7 +232,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
 
     private fun showSuperPasswordDialog() {
         val builder = AlertDialog.Builder(this)
-        val view: View = LayoutInflater.from(this).inflate(R.layout.dialog_supper_password, null, false)
+        val view: View =
+            LayoutInflater.from(this).inflate(R.layout.dialog_supper_password, null, false)
         builder.setView(view)
         builder.setCancelable(false)
         mSuperPasswordDialog?.dismiss()
@@ -225,7 +241,10 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         mSuperPasswordDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnNextSuperPassword.setOnClickListener {
             mSuperPasswordDialog?.dismiss()
-            startActivityForResult(SuperPasswordActivity.newIntent(this), Const.REQUEST_CODE_CREATE_SUPPER_PASSWORD)
+            startActivityForResult(
+                SuperPasswordActivity.newIntent(this),
+                Const.REQUEST_CODE_CREATE_SUPPER_PASSWORD
+            )
         }
         mSuperPasswordDialog?.show()
         dialogLayout(mSuperPasswordDialog)
@@ -239,7 +258,10 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
 
     private fun isStoragePermissionGranted(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+            ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ) == PackageManager.PERMISSION_GRANTED
         } else {
             // permission is automatically granted on sdk < 23 upon installation
             true
@@ -252,13 +274,17 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         TedPermission.with(this).setPermissionListener(object : PermissionListener {
             override fun onPermissionGranted() {
                 mHasShowWritePermission = false
-                (viewPager.adapter?.instantiateItem(viewPager, MainPagerAdapter.INDEX_PERSONAL) as PersonalFragment).setupNumberType()
+                (viewPager.adapter?.instantiateItem(
+                    viewPager,
+                    MainPagerAdapter.INDEX_PERSONAL
+                ) as PersonalFragment).setupNumberType()
             }
 
             override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
                 mHasShowWritePermission = false
             }
-        }).setDeniedMessage(R.string.msg_denied_permission).setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE).check()
+        }).setDeniedMessage(R.string.msg_denied_permission)
+            .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE).check()
     }
 
 
@@ -270,7 +296,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
 
     private fun showStoragePermissionDialog() {
         val builder = AlertDialog.Builder(this)
-        val view: View = LayoutInflater.from(this).inflate(R.layout.dialog_permission_write, null, false)
+        val view: View =
+            LayoutInflater.from(this).inflate(R.layout.dialog_permission_write, null, false)
         //
         view.btnDenyPermissionWrite.setOnClickListener {
             mStoragePermissionDialog?.dismiss()
@@ -292,7 +319,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
     private fun showIntruderPhotoDialog(intrudersPhotoItemViewState: IntrudersPhotoItemViewState) {
         if (CommonUtils.isCanSaveFile(this, 0)) {
             val builder = AlertDialog.Builder(this)
-            val view: View = LayoutInflater.from(this).inflate(R.layout.dialog_intruder_photo, null, false)
+            val view: View =
+                LayoutInflater.from(this).inflate(R.layout.dialog_intruder_photo, null, false)
             Glide.with(this).load(intrudersPhotoItemViewState.filePath).into(view.imageIntruder)
             view.btnCheckIntruder.setOnClickListener {
                 mIntruderPhotoDialog?.dismiss()
@@ -316,7 +344,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
 
     private fun buildOverlapPermissionDialog() {
         val builder = AlertDialog.Builder(this)
-        val view: View = LayoutInflater.from(this).inflate(R.layout.dialog_permission_overlap, null, false)
+        val view: View =
+            LayoutInflater.from(this).inflate(R.layout.dialog_permission_overlap, null, false)
         builder.setView(view)
         builder.setCancelable(false)
         mOverlapPermissionDialog?.dismiss()
@@ -324,12 +353,19 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         mOverlapPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnCancelOverlap.setOnClickListener { mOverlapPermissionDialog?.dismiss() }
         view.btnGotoSettingOverlap.setOnClickListener {
+            AppOpenManager.getInstance().enableAppResume()
             mOverlapPermissionDialog?.dismiss()
             if (PermissionChecker.checkOverlayPermission(this).not()) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName"))
+                    val intent = Intent(
+                        Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:$packageName")
+                    )
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-                    startActivityForResult(intent, Const.REQUEST_CODE_FLOATING_CONTROLS_SYSTEM_WINDOWS)
+                    startActivityForResult(
+                        intent,
+                        Const.REQUEST_CODE_FLOATING_CONTROLS_SYSTEM_WINDOWS
+                    )
                 }
             }
         }
@@ -337,7 +373,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
 
     private fun buildUsageDataAccessPermissionDialog() {
         val builder = AlertDialog.Builder(this)
-        val view: View = LayoutInflater.from(this).inflate(R.layout.dialog_permission_usage_data_access, null, false)
+        val view: View = LayoutInflater.from(this)
+            .inflate(R.layout.dialog_permission_usage_data_access, null, false)
         builder.setView(view)
         builder.setCancelable(false)
         mUsageDataAccessPermissionDialog?.dismiss()
@@ -345,6 +382,7 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         mUsageDataAccessPermissionDialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         view.btnCancelUsageDataAccess.setOnClickListener { mUsageDataAccessPermissionDialog?.dismiss() }
         view.btnGotoSettingUsageDataAccess.setOnClickListener {
+            AppOpenManager.getInstance().enableAppResume()
             mUsageDataAccessPermissionDialog?.dismiss()
             if (PermissionChecker.checkUsageAccessPermission(this).not()) {
                 startActivity(IntentHelper.usageAccessIntent())
@@ -358,13 +396,13 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
             viewModel.setLockSettingApp(AppLockerPreferences.LOCK_APP_WAIT)
             //
             mOverlapPermissionDialog?.show()
-          //  dialogLayout(mOverlapPermissionDialog)
+            //  dialogLayout(mOverlapPermissionDialog)
             return false
         } else if (!PermissionChecker.checkUsageAccessPermission(this)) {
             viewModel.setReload(false)
             //
             mUsageDataAccessPermissionDialog?.show()
-           // dialogLayout(mUsageDataAccessPermissionDialog)
+            // dialogLayout(mUsageDataAccessPermissionDialog)
             return false
         }
         return true
@@ -375,54 +413,58 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
     }
 
     private fun exitApp() {
-//        val index: Int = if (viewModel.isRating()) {
-//            1
-//        } else {
-//            if (viewModel.checkShowRateAfterLater()) {
-//                0
-//            } else {
-//                1
-//            }
-//        }
-//        when (index) {
-//            0 -> {
-                showRateDialog(true)
-//            }
-//            else -> {
-//                if (mExitDialog == null) {
-//                    buildAlertMessageCloseApp()
-//                }
-//                mExitDialog?.show()
-//                dialogLayout(mExitDialog)
-//            }
-//        }
+        val index: Int = if (viewModel.isRating()) {
+            1
+        } else {
+            if (viewModel.checkShowRateAfterLater()) {
+                0
+            } else {
+                1
+            }
+        }
+        when (index) {
+            0 -> {
+        showRate(true)
+            }
+            else -> {
+                if (mExitDialog == null) {
+                    buildAlertMessageCloseApp()
+                }
+                mExitDialog?.show()
+                dialogLayout(mExitDialog)
+            }
+        }
 
     }
 
-    fun showRateDialog(isFinish: Boolean) {
-//        val dialog = RateAppDialog(this)
-//        dialog.setCallback(object : RateCallback {
-//            override fun onMaybeLater() {
-//                if (isFinish) {
-//                    SharePreferenceUtils.increaseCountRate(this@MainActivity)
-//                    finishAffinity()
-//                }
-//            }
-//
-//            override fun onSubmit(review: String?) {
-//                Toast.makeText(this@MainActivity, R.string.thank_you, Toast.LENGTH_SHORT).show()
-//                SharePreferenceUtils.setRated(this@MainActivity)
-//                if (isFinish) {
-//                    finishAffinity()
-//                }
-//            }
-//
-//            override fun onRate() {
-//                com.MTG.AppLock.util.sharerate.CommonUtils.getInstance().rateApp(this@MainActivity)
-//                SharePreferenceUtils.setRated(this@MainActivity)
-//            }
-//        })
-//        dialog.show()
+    fun Context.showRate(isFinish: Boolean) {
+        val dialog = RateAppDialog(this)
+        dialog.setCallback(object : RateCallback {
+            override fun onMaybeLater() {
+                if (isFinish) {
+                    RatePrefUtils.increaseCountRate(this@showRate)
+                    (this@showRate as Activity).finish()
+                }
+            }
+
+            override fun onSubmit(review: String) {
+                Toast.makeText(
+                    this@showRate,
+                    "Thank you for reviewing...",
+                    Toast.LENGTH_SHORT
+                ).show()
+                RatePrefUtils.setRated(this@showRate)
+                if (isFinish) {
+                    (this@showRate as Activity).finish()
+                }
+            }
+
+            override fun onRate() {
+                com.common.control.utils.CommonUtils.getInstance().rateApp(this@showRate)
+                RatePrefUtils.setRated(this@showRate)
+            }
+        })
+        dialog.show()
     }
 
     private fun onLauncher() {
@@ -473,11 +515,14 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
     override fun onResume() {
         super.onResume()
         try {
-                if (viewPager.currentItem == MainPagerAdapter.INDEX_PERSONAL) {
-                    (viewPager.adapter?.instantiateItem(viewPager, MainPagerAdapter.INDEX_PERSONAL) as PersonalFragment).setupNumberTypeIfChange()
-                } else {
-                    showDialogOverlapOrUsageDataAccessPermission()
-                }
+            if (viewPager.currentItem == MainPagerAdapter.INDEX_PERSONAL) {
+                (viewPager.adapter?.instantiateItem(
+                    viewPager,
+                    MainPagerAdapter.INDEX_PERSONAL
+                ) as PersonalFragment).setupNumberTypeIfChange()
+            } else {
+                showDialogOverlapOrUsageDataAccessPermission()
+            }
 
         } catch (e: Exception) {
             e.printStackTrace()
@@ -489,7 +534,7 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
                     popupSnackbarForCompleteUpdate()
                 }
             }
-
+        AppOpenManager.getInstance().disableAppResume()
     }
 
     override fun onRequestWritePermissions() {
@@ -513,6 +558,7 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
             ApplicationListUtils.instance?.destroy()
             unregisterRemoveReceiver()
         }
+
     }
 
     override fun onAppSelected(): Boolean {
@@ -553,6 +599,8 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
         fun newIntent(context: Context): Intent {
             return Intent(context, MainActivity::class.java)
         }
+        var check_click_intruder :Int = 0
+        var check_click_personal :Int =0
     }
 
     override fun onStateUpdate(state: InstallState) {
@@ -568,7 +616,7 @@ class MainActivity : BaseActivity<MainViewModel>(), PersonalFragment.OnRequestWr
             Snackbar.LENGTH_INDEFINITE
         ).apply {
             setAction("RESTART") { appUpdateManager.completeUpdate() }
-            setActionTextColor(ContextCompat.getColor(context,R.color.colorGreen))
+            setActionTextColor(ContextCompat.getColor(context, R.color.colorGreen))
             show()
         }
     }

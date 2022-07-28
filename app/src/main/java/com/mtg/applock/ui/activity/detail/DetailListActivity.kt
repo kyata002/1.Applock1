@@ -24,6 +24,8 @@ import android.widget.PopupWindow
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
+import com.common.control.interfaces.AdCallback
+import com.common.control.manager.AdmobManager
 import com.mtg.applock.model.EncryptorModel
 import com.mtg.applock.model.ItemDetail
 import com.mtg.applock.ui.adapter.detaillist.DetailListAdapter
@@ -44,6 +46,7 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
+import com.google.android.gms.ads.interstitial.InterstitialAd
 
 import com.mtg.library.customview.CustomToolbar
 import com.mtg.pinlock.extension.decodeBase64
@@ -56,7 +59,9 @@ import kotlinx.android.synthetic.main.layout_view_controller_for_audio.*
 import kotlinx.android.synthetic.main.popup_more_audio.view.*
 import java.io.File
 import com.mtg.applock.R
+import com.mtg.applock.ui.activity.main.MainActivity
 import com.mtg.applock.ui.activity.move.MoveActivity
+import com.mtg.applock.util.ApplicationListUtils
 
 class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapter.OnSelectedDetailListener {
     private var mDetailListAdapterV2: DetailListAdapter? = null
@@ -65,6 +70,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
     private var mPath: String = ""
     private var mType = Const.TYPE_IMAGES
     private var mNumber: Int = 0
+    private var interAds : InterstitialAd? = null
     private var mExtension: String = ""
     private var mConfirmDialog: AlertDialog? = null
     private var mConfirmOneDialog: AlertDialog? = null
@@ -156,6 +162,7 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
     }
 
     override fun initViews() {
+
         mName = intent.getStringExtra(Const.EXTRA_NAME) ?: ""
         mPath = intent.getStringExtra(Const.EXTRA_PATH) ?: ""
         mType = intent.getIntExtra(Const.EXTRA_TYPE, Const.TYPE_IMAGES)
@@ -259,6 +266,11 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
                 }
             }
         }
+        AdmobManager.getInstance().loadBanner(this, com.mtg.applock.BuildConfig.banner_main)
+        if (intent.getBooleanExtra(Const.IS_FROM_FIRST_ALL, false)) {
+            showProgressBar()
+            ApplicationListUtils.instance?.reload(this)
+        }
     }
 
     private fun updateMediaSource() {
@@ -308,12 +320,20 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
         when (mType) {
             Const.TYPE_IMAGES -> {
                 val intent = DetailActivity.newIntent(this)
+                MainActivity.check_click_personal +=1
+                if(MainActivity.check_click_personal % 2==0){
+                    showInter()
+                }
                 intent.putExtra(Const.EXTRA_PATH, detail.path)
                 intent.putExtra(Const.EXTRA_TYPE, mType)
                 startActivityForResult(intent, Const.REQUEST_CODE_GO_TO_DETAIL)
             }
             Const.TYPE_VIDEOS -> {
                 val intent = DetailActivity.newIntent(this)
+                if(MainActivity.check_click_personal % 2==0){
+                    showInter()
+                }
+                MainActivity.check_click_personal +=1
                 intent.putExtra(Const.EXTRA_PATH, detail.path)
                 intent.putExtra(Const.EXTRA_TYPE, mType)
                 startActivityForResult(intent, Const.REQUEST_CODE_GO_TO_DETAIL)
@@ -349,6 +369,29 @@ class DetailListActivity : BaseActivity<DetailListViewModel>(), DetailListAdapte
                 }
             }
         }
+    }
+
+    private fun showInter() {
+        AdmobManager.getInstance().showInterstitial(this,interAds,object : AdCallback(){
+//            override fun onAdClosed() {
+//                super.onAdClosed()
+//                onBackPressed()
+//            }
+        })
+    }
+    private fun loadInter() {
+        AdmobManager.getInstance().loadInterAds(this, com.mtg.applock.BuildConfig.inter_open_personal,object :
+            AdCallback() {
+            override fun onResultInterstitialAd(interstitialAd: InterstitialAd?) {
+                super.onResultInterstitialAd(interstitialAd)
+                interAds = interstitialAd
+            }
+        })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadInter()
     }
 
     private fun detailFile(detail: ItemDetail) {

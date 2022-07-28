@@ -77,7 +77,8 @@
         android:paddingTop="20dp"
         android:paddingEnd="15dp"
         android:paddingBottom="20dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        >
 
         <ImageView
             android:id="@+id/imageLogoAudioFile"
