@@ -35,7 +35,6 @@
         app:srcCompat="@drawable/ucrop_shadow_upside"/>
 
     <LinearLayout
-        android:id="@+id/wrapper_states"
         android:layout_width="match_parent"
         android:layout_height="@dimen/ucrop_height_wrapper_states"
         android:layout_below="@+id/controls_shadow"
@@ -49,7 +48,6 @@
             style="@style/ucrop_WrapperIconState">
 
             <ImageView
-                android:id="@+id/image_view_state_scale"
                 style="@style/ucrop_ImageViewWidgetIcon"
                 app:srcCompat="@drawable/ucrop_scale"/>
 
@@ -65,7 +63,6 @@
             style="@style/ucrop_WrapperIconState">
 
             <ImageView
-                android:id="@+id/image_view_state_rotate"
                 style="@style/ucrop_ImageViewWidgetIcon"
                 app:srcCompat="@drawable/ucrop_rotate"/>
 

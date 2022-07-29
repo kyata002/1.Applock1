@@ -100,7 +100,6 @@
             app:layout_constraintTop_toTopOf="@id/tvDay1"/>
 
         <TextView
-            android:id="@+id/tvDay7"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="15dp"

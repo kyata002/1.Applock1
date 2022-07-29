@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppBarLayoutTheme"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fakeAds"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:modeView="delete_unlock"/>
@@ -59,7 +59,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="bottomView,playerView"/>
+        app:constraint_referenced_ids="bottomView,playerView"
+        />
     <FrameLayout
         android:id="@+id/fakeAds"
         android:layout_width="match_parent"

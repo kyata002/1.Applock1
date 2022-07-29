@@ -48,7 +48,6 @@ class FirstAllActivity : BaseActivity<FistAllViewModel>(), KeyboardHeightObserve
     private var mPasswordRulesDialog: AlertDialog? = null
     private var mScreenHeight = 0
     private var mIsPattern = true
-    private var mBannerAd: AdView? = null
 
     override fun getViewModel(): Class<FistAllViewModel> {
         return FistAllViewModel::class.java
@@ -330,14 +329,12 @@ class FirstAllActivity : BaseActivity<FistAllViewModel>(), KeyboardHeightObserve
         editPassword.editText?.let { hideKeyboard(it) }
         editPassword.clearFocus()
         editConfirmPassword.clearFocus()
-        mBannerAd?.pause()
         super.onPause()
     }
 
     override fun onResume() {
         super.onResume()
         mKeyboardHeightProvider?.setKeyboardHeightObserver(this)
-        mBannerAd?.resume()
     }
 
     override fun onDestroy() {

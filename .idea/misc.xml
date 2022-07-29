@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/.gradle/caches/transforms-3/c0334745ce913808afd2de03e7d5a2d6/transformed/jetified-CommonLibs-1.2.0/res/layout/custom_native.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/Admin/.gradle/caches/transforms-3/c0334745ce913808afd2de03e7d5a2d6/transformed/jetified-CommonLibs-1.2.0/res/layout/custom_native_media.xml" value="0.2015625" />
         <entry key="..\:/Users/Admin/.gradle/caches/transforms-3/c0334745ce913808afd2de03e7d5a2d6/transformed/jetified-CommonLibs-1.2.0/res/layout/item_native.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/.gradle/caches/transforms-3/c0334745ce913808afd2de03e7d5a2d6/transformed/jetified-CommonLibs-1.2.0/res/layout/layout_banner_control.xml" value="0.38697916666666665" />
@@ -10,24 +11,60 @@
         <entry key="..\:/Users/Admin/.gradle/caches/transforms-3/c0334745ce913808afd2de03e7d5a2d6/transformed/jetified-CommonLibs-1.2.0/res/layout/load_fb_banner.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/.gradle/caches/transforms-3/c0334745ce913808afd2de03e7d5a2d6/transformed/jetified-CommonLibs-1.2.0/res/layout/load_fb_native.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/background_layout_view_controller_for_audio.xml" value="0.3255" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_app_lock.xml" value="0.209" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_launcher_background.xml" value="0.209" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.209" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_note_icon.xml" value="0.193" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_notification_small.xml" value="0.209" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_options.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_path_line.xml" value="0.193" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_pattern.xml" value="0.3255" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_pattern_notext.xml" value="0.3255" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_pause.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_pin_notext.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_play.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_previous.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_select_active.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_change_password.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_fingerprint.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_intruder.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_locking_new_application.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_prevent_uninstall.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_privacy_policy.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_rate_application.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_settings_recover_pass.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_show_blue.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_theme_5_selected.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_theme_5_unselected.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_time.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/ic_video.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/round_group_work_24.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/round_settings_24.xml" value="0.193" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/selector_ic_audio_prev.xml" value="0.209" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/selector_ic_selected.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/selector_ic_show_blue.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/selector_more_customize_time.xml" value="0.193" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/drawable/switch_on.xml" value="0.193" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_detail_list.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_intruders_photos_detail.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_main.xml" value="0.1875" />
-        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_overlay_validation.xml" value="0.2015625" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_overlay_validation.xml" value="0.18" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_personal_list.xml" value="0.2015625" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_selected.xml" value="0.2015625" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_settings.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_splash.xml" value="0.18" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/activity_start.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/custom_banner_native.xml" value="0.18" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/custom_native.xml" value="0.25" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/custom_native_media.xml" value="0.2015625" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/dialog_apply_theme.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/dialog_detail.xml" value="0.2015625" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/dialog_permission_all_access.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/dialog_permission_camera.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/dialog_permission_overlap.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/dialog_permission_usage_data_access.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/dialog_permission_write.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/fragment_personal.xml" value="0.2015625" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/item_album.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/item_app_lock_list_configuration.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/item_configuration.xml" value="0.38697916666666665" />
@@ -35,10 +72,21 @@
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/item_locked_list_header.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/item_move.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/item_native_ads.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/layout_ask_lock_new_application.xml" value="0.2015625" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/layout_every_time.xml" value="0.2015625" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/layout_time_selected.xml" value="0.2015625" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/layout_view_controller.xml" value="0.2015625" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/layout_view_controller_for_audio.xml" value="0.33" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/layout_view_pattern_overlay.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/load_fb_native.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/layout/popup_more_audio.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/menu/edit_configuration.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/menu/home_screen_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/menu/intruder_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/menu/theme_list_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/menu/ucrop_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.209" />
+        <entry key="..\:/Users/Admin/StudioProjects/AppLock/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.193" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/a.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/aa.xml" value="0.147" />
         <entry key="..\:/Users/doman/OneDrive/Desktop/Work/resources/Applock/app/src/main/res/drawable/background_ads.xml" value="0.121" />

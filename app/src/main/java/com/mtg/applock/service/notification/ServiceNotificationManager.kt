@@ -15,8 +15,8 @@ class ServiceNotificationManager @Inject constructor(val context: Context) {
     fun createNotification(): Notification {
         createAppLockerServiceChannel()
         val notification = NotificationCompat.Builder(context, CHANNEL_ID_APP_LOCKER_SERVICE)
-                .setSmallIcon(R.drawable.ic_notification_small)
-                .setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.ic_note_icon))
+                .setSmallIcon(R.drawable.logo_app_lock)
+                .setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.logo_app_lock))
                 .setContentTitle(context.getString(R.string.notification_protecting_title))
                 .setContentText(context.getString(R.string.notification_protecting_description))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)

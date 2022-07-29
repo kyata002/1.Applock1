@@ -646,7 +646,7 @@ object FilePathHelper {
     }
 
     fun getIconIcon(context: Context, appPackageName: String?): Drawable? {
-        val drawable = ContextCompat.getDrawable(context, R.drawable.ic_note_icon)
+        val drawable = ContextCompat.getDrawable(context, R.drawable.logo_app_lock)
         if (TextUtils.equals(appPackageName, BuildConfig.APPLICATION_ID)) {
             return drawable
         }

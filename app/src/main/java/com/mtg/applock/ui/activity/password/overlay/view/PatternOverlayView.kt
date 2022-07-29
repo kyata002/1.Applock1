@@ -534,7 +534,7 @@ class PatternOverlayView @JvmOverloads constructor(
     }
 
     fun loadNative() {
-        AdmobManager.getInstance().loadNative(context, BuildConfig.native_open_app, frAds,R.layout.custom_native_media)
+        AdmobManager.getInstance().loadNative(context, BuildConfig.native_open_app, frAds,R.layout.custom_banner_native)
     }
 
     interface OnShowForgotPasswordListener {

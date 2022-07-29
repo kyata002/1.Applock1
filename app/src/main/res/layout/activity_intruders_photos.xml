@@ -106,7 +106,6 @@
                 app:srcCompat="@drawable/ic_no_intruder"/>
 
             <TextView
-                android:id="@+id/tvTitleCache"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"

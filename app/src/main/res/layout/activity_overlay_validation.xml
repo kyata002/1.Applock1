@@ -2,88 +2,81 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/background_theme_default"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_theme_default">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clPatternView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frAds">
 
-
-
-        <FrameLayout
-            android:id="@+id/frAds"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
-            <include layout="@layout/load_fb_native" />
-            <include layout="@layout/custom_native_media" />
-        </FrameLayout>
 
         <ImageView
             android:id="@+id/avatarLock"
             android:layout_width="72dp"
             android:layout_height="72dp"
-            android:layout_marginTop="56dp"
+            app:layout_constraintBottom_toTopOf="@+id/patternLockView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frAds"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/fingerPattern"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginTop="16dp"
-            android:padding="8dp"
-            android:textColor="@color/colorWhite"
-            android:drawablePadding="8dp"
             android:drawableStart="@drawable/baseline_fingerprint_24"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
             android:text="Fingerprint ON"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/avatarLock"/>
+            app:layout_constraintTop_toBottomOf="@id/avatarLock" />
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:visibility="gone"
             android:layout_marginEnd="20dp"
             android:gravity="center"
             android:text="@string/pattern_draw_your_unlock_current_pattern"
             android:textColor="@android:color/white"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/guideline"/>
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/guideline" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1"/>
+            app:layout_constraintGuide_percent="0.03" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrier"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             app:barrierDirection="top"
-            app:constraint_referenced_ids="patternLockView,guidelineCenterH"/>
+            app:constraint_referenced_ids="patternLockView,guidelineCenterH" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineCenterH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5"/>
+            app:layout_constraintGuide_percent="0.5" />
 
         <com.mtg.patternlockview.PatternLockView
             android:id="@+id/patternLockView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="15dp"
@@ -94,22 +87,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.45"
             app:layout_constraintStart_toStartOf="parent"
-            app:pathWidth="6dp"/>
+            app:pathWidth="6dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.9"/>
+            app:layout_constraintGuide_percent="0.9" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.mtg.pinlock.PinLockViewV2
         android:id="@+id/pinLock"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frAds" />
 
     <TextView
         android:id="@+id/tvTitlePin"
@@ -118,23 +111,27 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:visibility="gone"
         android:gravity="center"
         android:text="@string/msg_pin_lock_current_password"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@id/guidelineCenter"/>
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/guidelineCenter" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineCenter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintGuide_begin="185dp"
         app:layout_constraintGuide_end="512dp" />
 
     <FrameLayout
-        android:id="@+id/flAds"
+        android:id="@+id/frAds"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_height="@dimen/_56sdp"
+        android:background="#000"
+        app:layout_constraintTop_toTopOf="parent">
+          <include layout="@layout/load_fb_native"/>
+      </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

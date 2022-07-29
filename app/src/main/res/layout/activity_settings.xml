@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/coordinatorSettings"
-    android:layout_width="match_parent"
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_constraintBottom_toTopOf="@id/bottomView"
     app:layout_constraintEnd_toEndOf="parent"
@@ -11,7 +10,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ToolbarTheme"
@@ -119,7 +117,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsChangeSuperPassword"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -171,7 +168,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsChangePassword"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -223,7 +219,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsIntruder"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -257,7 +252,6 @@
 
             <!--  -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clSettingsLockScreen"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginStart="14dp"
@@ -275,7 +269,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsLockScreen"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -329,7 +322,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsFingerprint"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -367,7 +359,6 @@
 
             <!-- -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clSettingsPreventApplicationUninstall"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginStart="14dp"
@@ -387,7 +378,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsPreventApplicationUninstall"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -422,7 +412,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clSettingsAskLockingNewApplication"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginStart="14dp"
@@ -440,7 +429,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsAskLockingNewApplication"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -495,7 +483,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsPrivacyPolicy"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"
@@ -546,7 +533,6 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageSettingsRateApplication"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_gravity="center"

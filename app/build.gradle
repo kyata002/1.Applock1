@@ -70,18 +70,21 @@ android {
                 target.manifestPlaceholders += [(constantName): constantValue]
                 target.buildConfigField "String", "${constantName}", "\"${constantValue}\""
             }
-            addConstantTo(owner, "APP_ID", "ca-app-pub-3940256099942544~3347511713")
+            addConstantTo(owner, "APP_ID", "ca-app-pub-3270179691816977~5841508446")
 
-            addConstantTo(owner, "inter_splash", "ca-app-pub-3940256099942544/8691691433")
-            addConstantTo(owner, "inter_open_other_app", "ca-app-pub-3940256099942544/1033173712")
-            addConstantTo(owner, "inter_read_file", "ca-app-pub-3940256099942544/1033173712")
+            addConstantTo(owner, "inter_lock_personal", "ca-app-pub-3270179691816977/1846423116")
+            addConstantTo(owner, "inter_open_personal", "ca-app-pub-3270179691816977/2268546208")
+            addConstantTo(owner, "inter_open_app", "ca-app-pub-3270179691816977/7453973018")
+            addConstantTo(owner, "inter_open_intruder", "ca-app-pub-3270179691816977/9188892360")
 
-            addConstantTo(owner, "native_home", "ca-app-pub-3940256099942544/2247696110")
-            addConstantTo(owner, "native_setting", "ca-app-pub-3940256099942544/2247696110")
+            addConstantTo(owner, "native_open_app   ", "ca-app-pub-3270179691816977/3814110907")
+            addConstantTo(owner, "native_grouplock", "ca-app-pub-3270179691816977/4935620888")
 
-            addConstantTo(owner, "open_app", "ca-app-pub-3940256099942544/3419835294")
 
-            addConstantTo(owner, "banner_doc", "ca-app-pub-3940256099942544/6300978111")
+            addConstantTo(owner, "open_app", "ca-app-pub-3270179691816977/3430967529")
+
+            addConstantTo(owner, "banner_main", "ca-app-pub-3270179691816977/5673987484")
+            addConstantTo(owner, "banner_detailist_personal", "ca-app-pub-3270179691816977/3047824142")
 
         }
     }

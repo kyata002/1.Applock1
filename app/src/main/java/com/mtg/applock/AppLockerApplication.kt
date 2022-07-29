@@ -51,7 +51,9 @@ class AppLockerApplication : DaggerApplication() {
 //        if (enableAdsResume()) {
 //            AppOpenManager.getInstance().init(this, getOpenAppAdId())
 //        }
-        AppOpenManager.getInstance().init(this, getOpenAppAdId())
+        if (enableAdsResume()) {
+            AppOpenManager.getInstance().init(this, getOpenAppAdId())
+        }
 
         AdmobManager.getInstance().setShowLoadingDialog(isShowDialogLoadingAd())
     }
@@ -65,7 +67,7 @@ class AppLockerApplication : DaggerApplication() {
     }
 
     private fun enableAdsResume(): Boolean {
-        return false
+        return true
     }
 
     private fun hasAds(): Boolean {

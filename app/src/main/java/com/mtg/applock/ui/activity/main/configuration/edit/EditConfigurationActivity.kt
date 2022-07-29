@@ -116,7 +116,7 @@ class EditConfigurationActivity : BaseActivity<EditConfigurationViewModel>() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId==R.id.save_configuration){
+        if(item.itemId==R.id.ucrop_done){
             if (viewModel.updateConfiguration()) {
                 Toasty.showToast(this@EditConfigurationActivity, R.string.msg_update_group_lock_successfully, Toasty.SUCCESS)
                 setResult(Activity.RESULT_OK)

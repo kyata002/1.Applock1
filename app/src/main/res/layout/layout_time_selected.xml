@@ -9,7 +9,6 @@
         android:orientation="horizontal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clHour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/background_time"
@@ -48,7 +47,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/tvColon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -58,7 +56,6 @@
             android:textSize="32sp"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clMinute"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/background_time"

@@ -115,6 +115,7 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
             it?.let { theme ->
                 when (theme.typeTheme) {
                     ThemeUtils.TYPE_PIN -> {
+                        loadNav()
                         clPatternView.gone()
                         pinLock.visible()
                         if (mIsChangePassword) {
@@ -132,6 +133,7 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
                         }
                     }
                     else -> {
+                        loadNav()
                         clPatternView.visible()
                         pinLock.gone()
                         if (mIsChangePassword) {
@@ -367,7 +369,6 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
             pinLock.showFingerprint(false)
             pinLock.showImageIcon(false)
             pinLock.setGoneNext(true)
-            flAds.gone()
         }
     }
 
@@ -566,7 +567,7 @@ open class OverlayValidationActivity : IntruderHiddenCameraActivity<OverlayValid
         mBannerAd?.resume()
     }
     private fun loadNav(){
-        AdmobManager.getInstance().loadNative(this, BuildConfig.native_open_app, frAds,R.layout.custom_native_media)
+        AdmobManager.getInstance().loadNative(this, BuildConfig.native_open_app, frAds,R.layout.custom_banner_native)
     }
 
     private fun showInter() {

@@ -6,7 +6,6 @@
 
 
     <LinearLayout
-        android:id="@+id/clDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -15,7 +14,6 @@
         android:paddingEnd="25dp"
         >
         <ImageView
-            android:id="@+id/imageLogoDetail"
             android:layout_width="88dp"
             android:layout_height="88dp"
             android:elevation="12dp"
@@ -30,7 +28,6 @@
             android:weightSum="2">
             <TextView
                 android:layout_weight="1"
-                android:id="@+id/tLastModified"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/text_last_modified"
@@ -58,7 +55,6 @@
             android:weightSum="2">
 
             <TextView
-                android:id="@+id/tSize"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -118,7 +114,6 @@
             android:weightSum="2">
 
             <TextView
-                android:id="@+id/tName"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

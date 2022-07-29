@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">App Lock</string>
     <!-- AD unit ids-->
-    <string name="mobile_ad_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
 
     <string name="policy_url" translatable="false">YOUR_PRIVACY_URL_HERE</string>
 

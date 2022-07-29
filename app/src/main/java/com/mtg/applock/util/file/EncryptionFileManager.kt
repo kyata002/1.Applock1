@@ -305,7 +305,7 @@ object EncryptionFileManager {
                                                         albumTemp?.let { album ->
                                                             album.number += 1
                                                         }
-                                                                ?: albumList.add(Album(name = parent.name, path = parent.absolutePath, resIdThumbnail = R.drawable.ic_avatar_audio, number = 1, type = type))
+                                                                ?: albumList.add(Album(name = parent.name, path = parent.absolutePath, resIdThumbnail = R.drawable.ic_album_audio, number = 1, type = type))
                                                         progressCallback?.progress(getNumber(albumList))
                                                     }
                                                 }

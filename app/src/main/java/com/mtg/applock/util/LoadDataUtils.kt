@@ -204,7 +204,7 @@ object LoadDataUtils {
                         if (pathThumbnail.startsWith(getExternalAbsolutePath()) && File(pathThumbnail).length().toDouble() != 0.0 && MediaHelper.isSupportAudio(pathThumbnail)) {
                             albumName = albumName ?: "No Folder"
                             if (!folderMap.containsKey(parentId)) {
-                                val album = Album(name = albumName, path = parentPath, resIdThumbnail = R.drawable.ic_avatar_audio, number = 1, type = Const.TYPE_AUDIOS)
+                                val album = Album(name = albumName, path = parentPath, resIdThumbnail = R.drawable.ic_album_audio, number = 1, type = Const.TYPE_AUDIOS)
                                 folderMap[parentId] = album
                             } else {
                                 val album = folderMap[parentId]

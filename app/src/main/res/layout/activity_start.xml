@@ -310,7 +310,6 @@
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/imageBackgroundSplash"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
@@ -352,7 +351,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="Robust Secure Trusted"
+            android:text="@string/text_SECURED"
             android:textAllCaps="true"
             android:textSize="16sp"
             android:textColor="@color/colorPrimaryLight"
