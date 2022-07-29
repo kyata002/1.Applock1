@@ -538,9 +538,10 @@ class AppLockerService : DaggerService(), PinLockViewV2.OnLockScreenLoginCompact
             mOverlayView.setCodeValidation()
             mOverlayView.setBlockView(false)
             mOverlayView.checkUiOverlay()
-            mOverlayView.loadNative();
+
             mWindowManager.addView(mOverlayView, mOverlayParams)
             onFingerprint()
+            mOverlayView.loadNative();
         }
     }
 

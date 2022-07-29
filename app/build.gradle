@@ -16,7 +16,7 @@ android {
     compileSdkVersion 32
 
     defaultConfig {
-        applicationId "com.MTG.AppLock"
+        applicationId "com.applock.fingerprint.password.pinlock"
         minSdkVersion 21
         targetSdkVersion 32
         versionCode 3
@@ -60,7 +60,7 @@ android {
         }
 
         vOfficial_ {
-            applicationId "com.MTG.AppLock"
+            applicationId "com.applock.fingerprint.password.pinlock"
 
             buildConfigField "boolean", "TEST_AD", "false"
             buildConfigField "boolean", "PURCHASED", "false"
